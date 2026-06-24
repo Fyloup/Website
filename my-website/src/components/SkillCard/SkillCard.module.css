@@ -1,0 +1,65 @@
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 440px;
+    width: 300px;
+    padding: 10px;
+    background: #FFC400;
+    background: linear-gradient(145deg, rgba(255, 196, 0, 1) 0%, rgba(87, 202, 52, 1) 25%, rgba(0, 157, 255, 1) 50%, rgba(166, 43, 150, 1) 75%, rgba(255, 196, 0, 1) 100%);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.innerCard {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    background-color: #1F529F;
+}
+
+.labelContainer {
+    padding: 4px;
+}
+
+.label {
+    color: white;
+    padding: 4px 6px 6px 6px;
+    font-size: 28px;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    font-family: "Medula One", system-ui;
+    font-style: normal;
+    letter-spacing: 10%;
+}
+
+.rarity {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+    padding: 0 4px;
+}
+
+.point {
+    height: 18px;
+    width: 18px;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 64px;
+}
+
+.logo {
+    height: 164px;
+    width: 164px;
+}
