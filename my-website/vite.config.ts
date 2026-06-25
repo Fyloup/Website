@@ -14,6 +14,11 @@ const config = defineConfig({
     tanstackRouter({ target: 'react', autoCodeSplitting: true }),
     viteReact(),
   ],
+  css: {
+    modules: {
+      generateScopedName: "[name]_[local]_[hash:base64:5]"
+    }
+  }
 })
 
 export default config
