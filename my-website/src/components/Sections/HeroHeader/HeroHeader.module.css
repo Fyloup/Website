@@ -1,0 +1,34 @@
+
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    font-family: 'Atkinson Hyperlegible Next', sans-serif;
+}
+
+.headingContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.headingStart {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+
+    > p {
+        line-height: normal;
+        letter-spacing: 6%;
+        font-size: 4.5rem;
+    }
+}
+
+.headingEnd {
+
+    > p {
+        line-height: normal;
+        letter-spacing: 6%;
+        font-size: 4.5rem;
+    }
+}

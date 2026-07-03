@@ -3,15 +3,16 @@ import { createFileRoute } from '@tanstack/react-router'
 import '../index.css'
 import { Wrapper } from '#/components/Wrapper/Wrapper'
 import ReactLogo from '../assets/skillcards/react/react.svg'
+import { Skills } from '#/components/Sections/Skills/Skills'
+import { HeroHeader } from '#/components/Sections/HeroHeader/HeroHeader'
 
 export const Route = createFileRoute('/')({ component: Home })
 
 function Home() {
   return (
     <Wrapper>
-      <SkillCard label='React' rarity={10} logo={ReactLogo}/>
-      <SkillCard label='React' rarity={5} logo={ReactLogo}/>
-      <SkillCard label='React' rarity={3} logo={ReactLogo}/>
+      <HeroHeader/>
+      <Skills/>
     </Wrapper>
   )
 }

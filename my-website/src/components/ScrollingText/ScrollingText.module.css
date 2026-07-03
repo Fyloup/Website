@@ -1,0 +1,39 @@
+
+.root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.scrollingText {
+    line-height: normal;
+    letter-spacing: 6%;
+    font-size: 4.5rem;
+    opacity: 1;
+    transform: translate(0);
+    animation: scrolling 2s ease 0s infinite;
+}
+
+@keyframes scrolling {
+    
+    0% {
+        transform: translate(0, 200px);
+    }
+
+    25% {
+        transform: translate(0);
+    }
+
+    50% {
+        transform: translate(0);    
+    }
+
+    75% {
+        transform: translate(0);
+    }
+
+    100% {
+        transform: translate(0, -200px);
+    }
+}
