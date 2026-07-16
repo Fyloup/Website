@@ -1,14 +1,13 @@
-import { useEffect, useRef, type ReactNode, type RefObject } from "react"
+import { useRef, type ReactNode } from "react"
 import styles from './SkillCard.module.css'
 import Point from '../../assets/Point.svg'
-import clsx from "clsx"
 
-import { motion, useMotionTemplate, useMotionValue, useSpring, useTransform } from 'motion/react'
+import { motion, useMotionValue, useSpring, useTransform, useMotionTemplate } from 'motion/react'
 
 type SkillCardProps = {
     label: string;
     rarity: 10 | 5 | 3;
-    logo: ReactNode;
+    logo?: string;
     background?: ReactNode;
 }
 
@@ -25,6 +24,17 @@ export function SkillCard({label, rarity, logo}: SkillCardProps) {
 
     const glareX = useTransform(mouseX, [-150, 150], ["20%", "80%"]);
     const glareY = useTransform(mouseY, [-150, 150], ["20%", "80%"]);
+
+    // Holographic foil position — parallaxes opposite to the pointer so the
+    // rainbow sheen "slides" across the card as it tilts.
+    const foilX = useTransform(mouseX, [-150, 150], ["120%", "-20%"]);
+    const foilY = useTransform(mouseY, [-150, 150], ["120%", "-20%"]);
+    const foilPos = useMotionTemplate`${foilX} ${foilY}`;
+
+    // Glitter drifts more subtly than the foil for a layered, metallic feel.
+    const sparkleX = useTransform(mouseX, [-150, 150], ["40%", "60%"]);
+    const sparkleY = useTransform(mouseY, [-150, 150], ["40%", "60%"]);
+    const sparklePos = useMotionTemplate`${sparkleX} ${sparkleY}`;
 
     // Convert mouse position to rotation
     const rotateX = useTransform(mouseY, [-150, 150], [10, -10]);
@@ -70,15 +80,44 @@ export function SkillCard({label, rarity, logo}: SkillCardProps) {
             onMouseMove={handleOnMouseMove} 
             onMouseLeave={handleOnMouseLeave} 
         >
-            {/* <motion.div 
-                className={styles.shine}
-                style={{
-                    rotateX,
-                    rotateY,
-                    backgroundPositionX: rotateX,
-                    backgroundPositionY: rotateY
-                }}  
-            /> */}
+            {/* Card */}
+            <div
+                className={styles.card}
+            >
+                <div className={styles.innerCard}>
+                    <div className={styles.labelContainer}>
+                        <div className={styles.label}>
+                            {label}
+                        </div>
+                    </div>
+                    <div className={styles.rarity}>
+                        {Array.from({length: rarity}, (_, index) => `point-${index}`).map((id) =>
+                            <img key={id} className={styles.point} src={Point} alt="" />
+                        )}
+                    </div>
+                    <div className={styles.logoContainer}>
+                        {logo
+                            ? <img className={styles.logo} src={logo} alt=""/>
+                            : <span className={styles.monogram}>{label.slice(0, 2)}</span>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            {/* Frosted-glass sheen over the whole card */}
+            <div className={styles.glass} />
+
+            {/* Holographic rainbow/gold foil — confined to the border frame */}
+            <motion.div
+                className={styles.foil}
+                style={{ backgroundPosition: foilPos }}
+            />
+
+            {/* Glitter speckle layer — confined to the border frame */}
+            <motion.div
+                className={styles.sparkle}
+                style={{ backgroundPosition: sparklePos }}
+            />
 
             {/* Cursor-tracking specular glare */}
             <motion.div
@@ -88,33 +127,8 @@ export function SkillCard({label, rarity, logo}: SkillCardProps) {
                         rgba(255,255,255,0.85) 0%,
                         rgba(255,255,255,0.25) 12%,
                         rgba(255,255,255,0) 45%)`,
-                    opacity: 100,
                 }}
             />
-
-
-            {/* Card */}
-            <div 
-                className={styles.card} 
-            >
-                <div className={styles.innerCard}>
-                    <div className={styles.labelContainer}>
-                        <div className={styles.label}>
-                            {label}
-                        </div>
-                    </div>
-                    <div className={styles.rarity}>
-                        <>
-                            {Array.from({length: rarity}).map(() => 
-                                <img className={styles.point} src={Point} alt="" />
-                            )}
-                        </>
-                    </div>
-                    <div className={styles.logoContainer}>
-                        <img className={styles.logo} src={logo} alt=""/>
-                    </div>
-                </div>
-            </div>
         </motion.div>
         </div>
     )

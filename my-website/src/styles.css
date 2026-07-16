@@ -1,25 +1,82 @@
 
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap");
 @import "tailwindcss";
+
+:root {
+  /* Surfaces */
+  --dc-bg: #16171d;
+  --dc-panel: #1e2029;
+
+  /* Text ramp (bright -> faint) */
+  --dc-text: #ececf1;
+  --dc-text-2: #b4b4be;
+  --dc-text-3: #9a9aa6;
+  --dc-text-4: #8b8b98;
+  --dc-text-5: #6e6e7c;
+  --dc-text-6: #5a5a68;
+
+  /* Lines */
+  --dc-line: rgba(255, 255, 255, 0.09);
+  --dc-line-strong: rgba(255, 255, 255, 0.12);
+
+  /* Accent (base + lightened variants from the design's lighten() helper) */
+  --dc-accent: #2c4fb8;
+  --dc-accent-bright: #8b9ed8;
+  --dc-accent-glow: rgba(65, 97, 191, 0.45);
+  --dc-star: #f6a623;
+
+  /* Type families */
+  --dc-display: "Space Grotesk", system-ui, sans-serif;
+  --dc-body: "Instrument Sans", system-ui, sans-serif;
+  --dc-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+
+  /* Layout */
+  --dc-maxw: 1120px;
+  --dc-nav-h: 62px;
+}
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  background: var(--dc-bg);
+}
+
 html,
 body,
 #app {
-  display: flex;
   min-height: 100%;
-  height: 100%;
   width: 100%;
-}
-
-body {
   margin: 0;
 }
 
-main {
+body {
+  background: var(--dc-bg);
+  color: var(--dc-text);
+  font-family: var(--dc-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #ececf1;
+  color: #16171d;
+}
+
+#app {
   display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 100%;
+}
+
+/* Offset in-page anchor jumps so they clear the sticky header. */
+section[id] {
+  scroll-margin-top: 80px;
 }

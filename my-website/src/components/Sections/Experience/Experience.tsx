@@ -4,7 +4,7 @@ export function Experience() {
     return (
         <div>
             <section>
-                Mem               
+                Mem
             </section>
             <section>
                 Iris
