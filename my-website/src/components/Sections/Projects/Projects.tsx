@@ -3,6 +3,8 @@ import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 
 import styles from "./Projects.module.css";
+import { Project } from "#/components/Project/Project";
+import { Iris } from "#/components/Project/Iris";
 
 type Project = {
 	name: string;
@@ -39,7 +41,7 @@ const projects: Project[] = [
 	},
 	{
 		name: "Memory",
-		subtitle: "Personal product",
+		subtitle: "Projects centralization tool",
 		role: "Solo — design & build",
 		period: "2024",
 		description:
@@ -72,91 +74,29 @@ export function Projects() {
 
 	return (
 		<section id="work" className={styles.root}>
-			<div className={styles.header}>
-				<span className={styles.kicker}>Selected Work</span>
-				<span className={styles.count}>
-					({String(projects.length).padStart(2, "0")})
-				</span>
-			</div>
 
 			<div className={styles.list}>
-				{projects.map((project, index) => {
+				<Iris/>
+				{/* {projects.map((project, index) => {
 					const isOpen = open === index;
 					const number = String(index + 1).padStart(2, "0");
+					const {
+						name,
+						subtitle,
+						description
+					} = project;
 
 					return (
-						<div key={project.name} className={styles.item}>
-							<button
-								type="button"
-								className={styles.row}
-								aria-expanded={isOpen}
-								onClick={() => setOpen(isOpen ? -1 : index)}
-							>
-								<span
-									className={clsx(styles.number, isOpen && styles.numberActive)}
-								>
-									{number}
-								</span>
-								<span className={styles.rowMain}>
-									<span className={styles.name}>{project.name}</span>
-									<span className={styles.subtitle}>{project.subtitle}</span>
-								</span>
-								<span className={styles.rowMeta}>
-									<span className={styles.role}>{project.role}</span>
-									<span className={styles.period}>{project.period}</span>
-									<span
-										className={clsx(
-											styles.toggle,
-											isOpen && styles.toggleActive,
-										)}
-									>
-										{isOpen ? "×" : "+"}
-									</span>
-								</span>
-							</button>
-
-							<AnimatePresence initial={false}>
-								{isOpen && (
-									<motion.div
-										className={styles.panelWrap}
-										initial={{ height: 0, opacity: 0 }}
-										animate={{ height: "auto", opacity: 1 }}
-										exit={{ height: 0, opacity: 0 }}
-										transition={{ duration: 0.4, ease: [0.2, 0.7, 0.2, 1] }}
-									>
-										<div className={styles.panel}>
-											<div className={styles.panelText}>
-												<p className={styles.description}>
-													{project.description}
-												</p>
-												<ul className={styles.highlights}>
-													{project.highlights.map((highlight) => (
-														<li key={highlight} className={styles.highlight}>
-															<span className={styles.dash}>—</span>
-															{highlight}
-														</li>
-													))}
-												</ul>
-												<div className={styles.tags}>
-													{project.tags.map((tag) => (
-														<span key={tag} className={styles.tag}>
-															{tag}
-														</span>
-													))}
-												</div>
-											</div>
-											<div className={styles.shot} aria-hidden="true">
-												<span className={styles.shotBlobA} />
-												<span className={styles.shotBlobB} />
-												<span className={styles.shotLabel}>product shot</span>
-											</div>
-										</div>
-									</motion.div>
-								)}
-							</AnimatePresence>
-						</div>
+						<Project 
+							icon={"Icon"} 
+							name={name} 
+							subtitle={subtitle}
+							description={description}
+							isOpen={isOpen}
+							onClick={() => {setOpen(open === index ? 0 : index)}}
+						/>
 					);
-				})}
+				})} */}
 			</div>
 		</section>
 	);

@@ -2,9 +2,6 @@ import { motion } from "motion/react";
 
 import styles from "./HeroHeader.module.css";
 
-// Toggle to hide the "open to new opportunities" badge.
-const available = true;
-
 const rise = {
 	hidden: { opacity: 0, y: 24 },
 	visible: { opacity: 1, y: 0 },
@@ -57,17 +54,6 @@ export function HeroHeader() {
 					design systems. I audit, modernize and scale frontend applications,
 					and care about the small details that make software feel effortless.
 				</motion.p>
-
-				{available && (
-					<motion.div
-						className={styles.badge}
-						variants={rise}
-						transition={{ duration: 0.5, ease: "easeOut" }}
-					>
-						<span className={styles.badgeDot} />
-						<span className={styles.badgeLabel}>Open to new opportunities</span>
-					</motion.div>
-				)}
 			</motion.div>
 		</section>
 	);
