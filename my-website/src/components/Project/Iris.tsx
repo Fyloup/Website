@@ -5,6 +5,7 @@ import styles from './Project.module.css'
 import { AnimatePresence, motion, useMotionValue } from 'motion/react';
 import { createPortal } from 'react-dom';
 import { SplashScreen } from '../SplashScreen/SplashScreen';
+import IrisLogo from '../../assets/projects/iris/irisLogo.png'
 
 const data = {
 		name: "Iris",
@@ -98,7 +99,7 @@ export function Iris() {
                 <span
                     className={clsx(styles.number, isOverviewOpen && styles.numberActive)}
                 >
-                    "Icon"
+                    <img src={IrisLogo} alt='irisLogo' height={56} width={56}/>
                 </span>
                 <span className={styles.rowMain}>
                     <span className={styles.name}>{name}</span>
@@ -169,7 +170,7 @@ export function Iris() {
                                                     width: 0,
                                                     height: 0
                                                 }}
-                                                transition={{duration: 1}}
+                                                transition={{duration: 0.7}}
                                                 onAnimationComplete={handleOnAnimationComplete}
                                             />
                                         )}
