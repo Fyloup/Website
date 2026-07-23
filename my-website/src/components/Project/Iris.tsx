@@ -1,5 +1,5 @@
 
-import { useRef, useState, type ReactNode } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
 import clsx from 'clsx';
 import styles from './Project.module.css'
 import { AnimatePresence, motion, useMotionValue } from 'motion/react';
@@ -32,9 +32,12 @@ export function Iris() {
 
     const diveButtonRef = useRef(null)
 
-    const [isOpen, setIsOpen] = useState(false)
-    const [hasDived, setHasDived] = useState(false)
+    const [isOverviewOpen, setIsOverviewOpen] = useState(false)
+    const [hasClickedViewButton, setHasClickedViewButton] = useState(false)
     const [isSplashScreenOpen, setIsSplashScreenOpen] = useState(false)
+    const [isSplashScreenContentOpen, setIsSplashScreenContentOpen] = useState(false)
+
+    const [splashCount, setSplashCount] = useState(0)
 
     const splashShapeX = useMotionValue(0)
     const splashShapeY = useMotionValue(0)
@@ -42,10 +45,12 @@ export function Iris() {
     const {
         name,
         subtitle,
-        description
+        description,
+        highlights,
+        tags
     } = data
 
-    function handleOnDive() {
+    function handleViewButtonClick() {
 
         if (diveButtonRef.current) {
             const diveButton = diveButtonRef.current
@@ -53,23 +58,32 @@ export function Iris() {
 
             splashShapeX.set(diveButtonRect.top + (diveButtonRect.height / 2))
             splashShapeY.set(diveButtonRect.left + (diveButtonRect.width / 2))
-            setHasDived(!hasDived)
+
+            setHasClickedViewButton(true)
+            setIsSplashScreenOpen(true)
         }
     }
 
     function handleOnAnimationComplete() {
 
-        if (!isSplashScreenOpen)
-            setIsSplashScreenOpen(true)
+        switch(splashCount % 2) {
+            case 0:
+                setIsSplashScreenContentOpen(true)
+                break
+            case 1:
+                setIsSplashScreenOpen(false)
+                break
+            default:
+                return
+        }
+
+        setSplashCount(splashCount + 1)
     }
 
     function handleOnSplashScreenLeave() {
-        setIsSplashScreenOpen(false)
-        setHasDived(false)
+        setHasClickedViewButton(false)
+        setIsSplashScreenContentOpen(false)
     }
-
-    console.log('splashShapeX', splashShapeX)
-    console.log('splashShapeY', splashShapeY)
 
     return (
 		<div key={name} className={styles.item}>
@@ -78,11 +92,11 @@ export function Iris() {
             <button
                 type="button"
                 className={styles.row}
-                aria-expanded={isOpen}
-                onClick={() => {setIsOpen(!isOpen)}}
+                aria-expanded={isOverviewOpen}
+                onClick={() => {setIsOverviewOpen(!isOverviewOpen)}}
             >
                 <span
-                    className={clsx(styles.number, isOpen && styles.numberActive)}
+                    className={clsx(styles.number, isOverviewOpen && styles.numberActive)}
                 >
                     "Icon"
                 </span>
@@ -94,17 +108,17 @@ export function Iris() {
                     <span
                         className={clsx(
                             styles.toggle,
-                            isOpen && styles.toggleActive,
+                            isOverviewOpen && styles.toggleActive,
                         )}
                     >
-                        {isOpen ? "×" : "+"}
+                        {isOverviewOpen ? "×" : "+"}
                     </span>
                 </span>
             </button>
 
             {/* Overview content */}
-            <AnimatePresence initial={false}>
-                {isOpen && (
+            <AnimatePresence initial={false} onExitComplete={() => {console.log('exit')}}>
+                {isOverviewOpen && (
                     <motion.div
                         className={styles.panelWrap}
                         initial={{ height: 0, opacity: 1 }}
@@ -117,8 +131,8 @@ export function Iris() {
                                 <p className={styles.description}>
                                     {description}
                                 </p>
-                                {/* <ul className={styles.highlights}>
-                                    {project.highlights.map((highlight) => (
+                                <ul className={styles.highlights}>
+                                    {highlights.map((highlight) => (
                                         <li key={highlight} className={styles.highlight}>
                                             <span className={styles.dash}>—</span>
                                             {highlight}
@@ -126,17 +140,17 @@ export function Iris() {
                                     ))}
                                 </ul>
                                 <div className={styles.tags}>
-                                    {project.tags.map((tag) => (
+                                    {tags.map((tag) => (
                                         <span key={tag} className={styles.tag}>
                                             {tag}
                                         </span>
                                     ))}
-                                </div> */}
+                                </div>
                             </div>
                             <div className={styles.diveButtonContainer}>
                                 {createPortal(
                                     <AnimatePresence>
-                                        {hasDived && (
+                                        {hasClickedViewButton && (
                                             <motion.div 
                                                 className={styles.splashShape}
                                                 style={{
@@ -164,20 +178,16 @@ export function Iris() {
                                 <button 
                                     className={styles.meetIrisButton}
                                     ref={diveButtonRef}
-                                    onClick={() => {handleOnDive()}}
+                                    onClick={() => {handleViewButtonClick()}}
                                 >
                                     Meet Iris
                                 </button>
                             </div>
-                            {/* <div className={styles.shot} aria-hidden="true">
-                                <span className={styles.shotBlobA} />
-                                <span className={styles.shotBlobB} />
-                                <span className={styles.shotLabel}>product shot</span>
-                            </div> */}
                         </div>
                         <SplashScreen 
                             backgroundColor={"#fff"} 
                             isOpen={isSplashScreenOpen}
+                            isReady={isSplashScreenContentOpen}
                             onLeave={handleOnSplashScreenLeave}
                         />
                     </motion.div>

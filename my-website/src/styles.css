@@ -55,6 +55,7 @@ body {
   background: var(--dc-bg);
   color: var(--dc-text);
   font-family: var(--dc-body);
+  scrollbar-gutter: stable;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
