@@ -1,5 +1,5 @@
 
-import { useEffect, useRef, useState, type ReactNode } from 'react'
+import { useRef, useState } from 'react'
 import clsx from 'clsx';
 import styles from './Project.module.css'
 import { AnimatePresence, motion, useMotionValue } from 'motion/react';
@@ -14,7 +14,7 @@ type ProjectProps = {
 
 export function Project({data}: ProjectProps) {
 
-    const diveButtonRef = useRef(null)
+    const diveButtonRef = useRef<HTMLButtonElement>(null)
 
     const [isOverviewOpen, setIsOverviewOpen] = useState(false)
     const [hasClickedViewButton, setHasClickedViewButton] = useState(false)
@@ -36,8 +36,9 @@ export function Project({data}: ProjectProps) {
 
     function handleViewButtonClick() {
 
-        if (diveButtonRef.current) {
-            const diveButton = diveButtonRef.current
+        const diveButton = diveButtonRef.current
+
+        if (diveButton) {
             const diveButtonRect = diveButton.getBoundingClientRect()
 
             splashShapeX.set(diveButtonRect.top + (diveButtonRect.height / 2))
