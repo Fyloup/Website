@@ -7,31 +7,31 @@ import styles from "./Skills.module.css";
 type Skill = {
 	label: string;
 	rarity: 10 | 5 | 3;
-	logo?: string;
+	logoPath?: string;
 };
 
 // Rarity mirrors proficiency: 10 = expert, 5 = strong, 3 = proficient.
 const skills: Skill[] = [
-	{ label: "React", rarity: 10, logo: ReactLogo },
-	{ label: "TypeScript", rarity: 10 },
-	{ label: "NextJS", rarity: 5 },
-	{ label: "JavaScript", rarity: 5 },
-	{ label: "TanStack Query", rarity: 5 },
-	{ label: "TanStack Router", rarity: 5 },
-	{ label: "CSS Modules", rarity: 5 },
-	{ label: "Motion", rarity: 5 },
-	{ label: "Redux", rarity: 5 },
-	{ label: "Tailwind", rarity: 3 },
-	{ label: "Vite", rarity: 3 },
-	{ label: "React Aria", rarity: 3 },
-	{ label: "Node.js", rarity: 3 },
-	{ label: "Vitest", rarity: 3 },
-	{ label: "Cypress", rarity: 3 },
-	{ label: "Playwright", rarity: 3 },
-	{ label: "Storybook", rarity: 3 },
-	{ label: "Figma", rarity: 3 },
-	{ label: "Docker", rarity: 3 },
-	{ label: "Python", rarity: 3 },
+	{ label: "React", rarity: 10, logoPath: ReactLogo },
+	{ label: "TypeScript", rarity: 10, logoPath: ReactLogo  },
+	{ label: "NextJS", rarity: 5, logoPath: ReactLogo  },
+	{ label: "JavaScript", rarity: 5, logoPath: ReactLogo  },
+	{ label: "TanStack Query", rarity: 5, logoPath: ReactLogo  },
+	{ label: "TanStack Router", rarity: 5, logoPath: ReactLogo  },
+	{ label: "CSS Modules", rarity: 5, logoPath: ReactLogo  },
+	{ label: "Motion", rarity: 5, logoPath: ReactLogo  },
+	{ label: "Redux", rarity: 5, logoPath: ReactLogo  },
+	{ label: "Tailwind", rarity: 3, logoPath: ReactLogo  },
+	{ label: "Vite", rarity: 3, logoPath: ReactLogo  },
+	{ label: "React Aria", rarity: 3, logoPath: ReactLogo  },
+	{ label: "Node.js", rarity: 3, logoPath: ReactLogo  },
+	{ label: "Vitest", rarity: 3, logoPath: ReactLogo  },
+	{ label: "Cypress", rarity: 3, logoPath: ReactLogo  },
+	{ label: "Playwright", rarity: 3, logoPath: ReactLogo  },
+	{ label: "Storybook", rarity: 3, logoPath: ReactLogo  },
+	{ label: "Figma", rarity: 3, logoPath: ReactLogo  },
+	{ label: "Docker", rarity: 3, logoPath: ReactLogo  },
+	{ label: "Python", rarity: 3, logoPath: ReactLogo  },
 ];
 
 export function Skills() {
@@ -64,7 +64,7 @@ export function Skills() {
 						<SkillCard
 							label={skill.label}
 							rarity={skill.rarity}
-							logo={skill.logo}
+							logo={skill.logoPath}
 						/>
 					</motion.div>
 				))}

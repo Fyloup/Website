@@ -35,6 +35,21 @@
   --dc-nav-h: 62px;
 }
 
+@font-face {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  src: url("./assets//fonts/Gill\ Sans.otf");
+}
+
+@font-face {
+  font-family: GillSansCondensed;
+  src: url("./assets//fonts/GillSans\ Condensed.otf");
+}
+
+@font-face {
+  font-family: GillSansCondensedBold;
+  src: url("./assets//fonts/GillSans\ Condensed\ Bold.otf");
+}
+
 * {
   box-sizing: border-box;
 }

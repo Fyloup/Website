@@ -63,73 +63,40 @@ export function SkillCard({label, rarity, logo}: SkillCardProps) {
     }
 
     return (
-        <div style={{perspective: 1000}}>
-        <motion.div 
-            className={styles.root}
-            style={{
-                rotateX,
-                rotateY,
-                transformStyle: "preserve-3d",
-                background: `
-                        conic-gradient(from 0deg at ${glareX} ${glareY}, #FFF500FF 0%, #FFFFFFFF 50%, #FFCF07FF 100%)
-                    `
-                ,
-                borderRadius: 12
-            }}
-            ref={cardRef}
-            onMouseMove={handleOnMouseMove} 
-            onMouseLeave={handleOnMouseLeave} 
-        >
-            {/* Card */}
-            <div
+        <div className={styles.root}>
+            <motion.div 
                 className={styles.card}
+                style={{
+                    rotateX,
+                    rotateY,
+                    // background: `
+                    //         conic-gradient(from 0deg at ${glareX} ${glareY}, #FFF500FF 0%, #FFFFFFFF 50%, #FFCF07FF 100%)
+                    //     `
+                    // ,
+                }}
+                ref={cardRef}
+                onMouseMove={handleOnMouseMove} 
+                onMouseLeave={handleOnMouseLeave} 
             >
+                {/* Card */}
                 <div className={styles.innerCard}>
                     <div className={styles.labelContainer}>
                         <div className={styles.label}>
                             {label}
                         </div>
                     </div>
-                    <div className={styles.rarity}>
-                        {Array.from({length: rarity}, (_, index) => `point-${index}`).map((id) =>
-                            <img key={id} className={styles.point} src={Point} alt="" />
-                        )}
-                    </div>
-                    <div className={styles.logoContainer}>
-                        {logo
-                            ? <img className={styles.logo} src={logo} alt=""/>
-                            : <span className={styles.monogram}>{label.slice(0, 2)}</span>
-                        }
+                    <div className={styles.illustrationWrapper}>
+                        <div className={styles.illustrationContainer}>
+                            <div className={styles.illustration}>
+                                {logo
+                                    ? <img className={styles.logo} src={logo} alt=""/>
+                                    : <span className={styles.monogram}>{label.slice(0, 2)}</span>
+                                }
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            {/* Frosted-glass sheen over the whole card */}
-            <div className={styles.glass} />
-
-            {/* Holographic rainbow/gold foil — confined to the border frame */}
-            <motion.div
-                className={styles.foil}
-                style={{ backgroundPosition: foilPos }}
-            />
-
-            {/* Glitter speckle layer — confined to the border frame */}
-            <motion.div
-                className={styles.sparkle}
-                style={{ backgroundPosition: sparklePos }}
-            />
-
-            {/* Cursor-tracking specular glare */}
-            <motion.div
-                className={styles.glare}
-                style={{
-                    background: `radial-gradient(circle at ${glareX}% ${glareY}%,
-                        rgba(255,255,255,0.85) 0%,
-                        rgba(255,255,255,0.25) 12%,
-                        rgba(255,255,255,0) 45%)`,
-                }}
-            />
-        </motion.div>
+            </motion.div>
         </div>
     )
 }
