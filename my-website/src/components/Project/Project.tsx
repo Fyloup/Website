@@ -31,7 +31,9 @@ export function Project({data}: ProjectProps) {
         subtitle,
         description,
         highlights,
-        tags
+        tags,
+        logoPath,
+        viewButtonText
     } = data
 
     function handleViewButtonClick() {
@@ -83,7 +85,7 @@ export function Project({data}: ProjectProps) {
                 <span
                     className={clsx(styles.number, isOverviewOpen && styles.numberActive)}
                 >
-                    <img src={IrisLogo} alt='irisLogo' height={56} width={56}/>
+                    <img src={logoPath} alt='logo-path' height={56} width={56}/>
                 </span>
                 <span className={styles.rowMain}>
                     <span className={styles.name}>{name}</span>
@@ -165,7 +167,7 @@ export function Project({data}: ProjectProps) {
                                     ref={diveButtonRef}
                                     onClick={() => {handleViewButtonClick()}}
                                 >
-                                    Meet Iris
+                                    {viewButtonText}
                                 </button>
                             </div>
                         </div>

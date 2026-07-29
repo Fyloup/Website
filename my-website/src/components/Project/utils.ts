@@ -1,4 +1,8 @@
 
+import IrisLogo from '../../assets/projects/iris/irisLogo.png'
+import MemoryLogo from '../../assets/projects/memory/memoryLogo.svg'
+import SustainLogo from '../../assets/projects/sustain/sustainLogo.png'
+
 export type ProjectEntry = {
     id: string;
     name: string;
@@ -8,6 +12,8 @@ export type ProjectEntry = {
     description: string;
     highlights: string[];
     tags: string[];
+    logoPath: string;
+    viewButtonText: string;
 }
 
 export const projectsData: ProjectEntry[] = [
@@ -32,6 +38,8 @@ export const projectsData: ProjectEntry[] = [
             "React Aria",
             "Redux",
         ],
+        logoPath: IrisLogo,
+        viewButtonText: "Meet Iris"
     },
     {
         id: "memory",
@@ -46,7 +54,9 @@ export const projectsData: ProjectEntry[] = [
 			"A playground for frontend architecture and animation",
 			"Strong, user-centric design system",
 		],
-		tags: ["React", "TypeScript", "Vite", "Motion", "CSS Modules"],
+		tags: ["React", "TypeScript", "Vite", "Motion", "CSS Modules"], 
+        logoPath: MemoryLogo,
+        viewButtonText: "Discover Memory"
 	},
 	{
         id: "sustain",
@@ -62,5 +72,7 @@ export const projectsData: ProjectEntry[] = [
 			"Design system in Figma + a full visual identity redesign",
 		],
 		tags: ["React", "TypeScript", "Ant Design", "Figma", "Design System"],
+        logoPath: SustainLogo,
+        viewButtonText: "Discover SustainEcho"
 	}
 ]
