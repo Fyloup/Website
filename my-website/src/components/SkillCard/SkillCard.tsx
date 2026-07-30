@@ -22,23 +22,21 @@ export function SkillCard({label, rarity, logo}: SkillCardProps) {
     const mouseX = useSpring(x, { stiffness: 250, damping: 20 });
     const mouseY = useSpring(y, { stiffness: 250, damping: 20 });
 
-    const glareX = useTransform(mouseX, [-150, 150], ["20%", "80%"]);
-    const glareY = useTransform(mouseY, [-150, 150], ["20%", "80%"]);
-
-    // Holographic foil position — parallaxes opposite to the pointer so the
-    // rainbow sheen "slides" across the card as it tilts.
-    const foilX = useTransform(mouseX, [-150, 150], ["120%", "-20%"]);
-    const foilY = useTransform(mouseY, [-150, 150], ["120%", "-20%"]);
-    const foilPos = useMotionTemplate`${foilX} ${foilY}`;
-
-    // Glitter drifts more subtly than the foil for a layered, metallic feel.
-    const sparkleX = useTransform(mouseX, [-150, 150], ["40%", "60%"]);
-    const sparkleY = useTransform(mouseY, [-150, 150], ["40%", "60%"]);
-    const sparklePos = useMotionTemplate`${sparkleX} ${sparkleY}`;
-
     // Convert mouse position to rotation
-    const rotateX = useTransform(mouseY, [-150, 150], [10, -10]);
-    const rotateY = useTransform(mouseX, [-150, 150], [-10, 10]);
+    const rotateX = useTransform(mouseY, [-150, 150], [7, -7]);
+    const rotateY = useTransform(mouseX, [-150, 150], [-7, 7]);
+
+    const translateX = useTransform(mouseY, [-150, 150], [10, -10]);
+    const translateY = useTransform(mouseX, [-150, 150], [10, -10]);
+
+    const translateShineX = useTransform(mouseY, [-150, 150], [25, -25]);
+    const translateShineY = useTransform(mouseX, [-150, 150], [25, -25]);
+
+    const translate2X = useTransform(mouseY, [-150, 150], [35, -35]);
+    const translate2Y = useTransform(mouseX, [-150, 150], [35, -35]);
+
+    const translateDotX = useTransform(mouseY, [-150, 0, 150], [150, 0, -150]);
+    const translateDotY = useTransform(mouseX, [-150, 0, 150], [-150, 0, 150]);
 
 
     const handleOnMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -52,6 +50,8 @@ export function SkillCard({label, rarity, logo}: SkillCardProps) {
         const centeredX = innerX - rect.width / 2
         const centeredY = innerY - rect.height / 2
 
+        console.log('', centeredX, centeredY)
+
         x.set(centeredX)
         y.set(centeredY)
     };
@@ -62,23 +62,54 @@ export function SkillCard({label, rarity, logo}: SkillCardProps) {
         y.set(0)
     }
 
+
     return (
-        <div className={styles.root}>
-            <motion.div 
-                className={styles.card}
+        <div style={{perspective: 1000}}>
+
+        <motion.div 
+            className={styles.root}
                 style={{
-                    rotateX,
-                    rotateY,
-                    // background: `
-                    //         conic-gradient(from 0deg at ${glareX} ${glareY}, #FFF500FF 0%, #FFFFFFFF 50%, #FFCF07FF 100%)
-                    //     `
-                    // ,
+                    rotateX: rotateX,
+                    rotateY: rotateY,
                 }}
                 ref={cardRef}
                 onMouseMove={handleOnMouseMove} 
                 onMouseLeave={handleOnMouseLeave} 
+        >
+
+            <motion.div
+                className={styles.cardGradient}
+                style={{
+                    x: translateShineX,
+                    y: translateShineY
+                }}
+            />
+
+            <motion.div
+                className={styles.cardGradient3}
+                style={{
+                    x: translateX,
+                    y: translateY
+                }}
+            />
+
+            <motion.div
+                className={styles.cardGradient2}
+                style={{
+                    x: translate2X,
+                    y: translate2Y
+                }}
+            />
+
+            <motion.div 
+                className={styles.glare} 
+                style={{x: translateX, y: translateY}}
+            />
+
+            {/* Card */}
+            <div 
+                className={styles.card}
             >
-                {/* Card */}
                 <div className={styles.innerCard}>
                     <div className={styles.labelContainer}>
                         <div className={styles.label}>
@@ -96,7 +127,9 @@ export function SkillCard({label, rarity, logo}: SkillCardProps) {
                         </div>
                     </div>
                 </div>
-            </motion.div>
+            </div>
+        </motion.div>
         </div>
+
     )
 }
