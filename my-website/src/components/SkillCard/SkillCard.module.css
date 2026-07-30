@@ -6,6 +6,7 @@
     height: 440px;
     width: 300px;
     transform-style: preserve-3d;
+    /* background-color: #FFE167; */
     overflow: hidden;
 }
 
@@ -50,7 +51,7 @@
     left: -100px;
     right: -100px;
     bottom: -100px;
-    background-image: linear-gradient(145deg,rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 25%, rgba(255, 255, 255, 0) 35%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 65%, rgba(255, 255, 255, 0.43) 80%, rgba(255, 255, 255, 0) 100%);
+    background-image: linear-gradient(145deg,rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.23) 25%, rgba(255, 255, 255, 0) 35%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.27) 80%, rgba(255, 255, 255, 0.43) 90%, rgba(255, 255, 255, 0) 100%);
     mix-blend-mode: screen;
 }
 
@@ -72,7 +73,7 @@
     flex-direction: column;
     height: 100%;
     width: 100%;
-    background-color: #1F529F;
+    background-color: #3777D7;
     /* border: 1px solid rgb(67, 51, 1); */
 }
 
@@ -80,16 +81,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 16px 16px 0 16px;
+    padding: 10px 10px 0 10px;
 }
 
 .label {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     color: black;
-    background-color: white;
-    padding: 8px 0 8px 10px;
+    /* background-color: white; */
+    padding: 8px 10px 8px 10px;
     font-size: 20px;
     border-radius: 10px;
     width: 100%;
@@ -99,11 +100,19 @@
     font-family: GillSansCondensedBold;
 }
 
+.type {
+    content: '';
+    border-radius: 100px;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+}
+
 .illustrationWrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 16px;
+    padding: 0 10px 10px 10px;
 }
 
 .illustrationContainer {
@@ -112,9 +121,10 @@
     justify-content: center;
     height: 100%;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 0;
     padding: 40px;
     background-color: white;
+    border: 2px solid rgb(172, 172, 172);
 }
 
 .illustration {
@@ -129,6 +139,42 @@
         height: 84px;
         width: 84px;
     }
+}
+
+.descriptionWrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 40px 10px 10px 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.descriptionValue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    font-family: GillSansCondensed; 
+    text-align: start;
+    color: black;
+    font-size: 1.2rem;
+}
+
+.subDescription {
+    color: black;
+    font-size: 0.8rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 18px;
 }
 
 .monogram {

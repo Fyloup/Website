@@ -9,9 +9,10 @@ type SkillCardProps = {
     rarity: 10 | 5 | 3;
     logo?: string;
     background?: ReactNode;
+    description: string;
 }
 
-export function SkillCard({label, rarity, logo}: SkillCardProps) {
+export function SkillCard({label, rarity, logo, description}: SkillCardProps) {
 
     const cardRef = useRef<HTMLDivElement>(null)
 
@@ -76,34 +77,36 @@ export function SkillCard({label, rarity, logo}: SkillCardProps) {
                 onMouseMove={handleOnMouseMove} 
                 onMouseLeave={handleOnMouseLeave} 
         >
+            {rarity === 10 ? (
+                <>
+                    <motion.div
+                        className={styles.cardGradient}
+                        style={{
+                            x: translateShineX,
+                            y: translateShineY
+                        }}
+                    />
 
-            <motion.div
-                className={styles.cardGradient}
-                style={{
-                    x: translateShineX,
-                    y: translateShineY
-                }}
-            />
+                    <motion.div
+                        className={styles.cardGradient3}
+                        style={{
+                            x: translateX,
+                            y: translateY
+                        }}
+                    />
 
-            <motion.div
-                className={styles.cardGradient3}
-                style={{
-                    x: translateX,
-                    y: translateY
-                }}
-            />
-
-            <motion.div
-                className={styles.cardGradient2}
-                style={{
-                    x: translate2X,
-                    y: translate2Y
-                }}
-            />
-
+                    <motion.div
+                        className={styles.cardGradient2}
+                        style={{
+                            x: translate2X,
+                            y: translate2Y
+                        }}
+                    />  
+                </>
+            ) : null}
             <motion.div 
                 className={styles.glare} 
-                style={{x: translateX, y: translateY}}
+                style={{x: translateShineX, y: translateShineY}}
             />
 
             {/* Card */}
@@ -114,6 +117,8 @@ export function SkillCard({label, rarity, logo}: SkillCardProps) {
                     <div className={styles.labelContainer}>
                         <div className={styles.label}>
                             {label}
+                            <div className={styles.type}>
+                            </div>
                         </div>
                     </div>
                     <div className={styles.illustrationWrapper}>
@@ -124,6 +129,22 @@ export function SkillCard({label, rarity, logo}: SkillCardProps) {
                                     : <span className={styles.monogram}>{label.slice(0, 2)}</span>
                                 }
                             </div>
+                        </div>
+                    </div>
+                    <div className={styles.descriptionWrapper}>
+                        <div className={styles.description}>
+                            <div className={styles.descriptionValue}>
+                                <div className={styles.type}>
+                                </div>
+                                <div className={styles.type}>
+                                </div>
+                                <div className={styles.type}>
+                                </div>
+                            </div>
+                            {description}
+                        </div>
+                        <div className={styles.subDescription}>
+                            I have professional experience with this technology
                         </div>
                     </div>
                 </div>
