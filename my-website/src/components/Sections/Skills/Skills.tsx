@@ -6,33 +6,32 @@ import styles from "./Skills.module.css";
 
 type Skill = {
 	label: string;
-	rarity: 10 | 5 | 3;
+	rarity: "gold" | "silver" | "basic";
 	logoPath?: string;
 	description: string;
 };
 
-// Rarity mirrors proficiency: 10 = expert, 5 = strong, 3 = proficient.
 const skills: Skill[] = [
-	{ label: "React", rarity: 10, logoPath: ReactLogo, description: 'Professional exp.'},
-	{ label: "TypeScript", rarity: 10, logoPath: ReactLogo, description: 'Professional exp.'},
-	{ label: "NextJS", rarity: 5, logoPath: ReactLogo, description: 'Professional exp.'},
-	{ label: "JavaScript", rarity: 5, logoPath: ReactLogo, description: 'Professional exp.'},
-	{ label: "TanStack Query", rarity: 5, logoPath: ReactLogo, description: 'Professional exp.'},
-	{ label: "TanStack Router", rarity: 5, logoPath: ReactLogo, description: 'Professional exp.'},
-	{ label: "CSS Modules", rarity: 5, logoPath: ReactLogo, description: 'Professional exp.'},
-	{ label: "Motion", rarity: 5, logoPath: ReactLogo, description: 'Professional exp.'},
-	{ label: "Redux", rarity: 5, logoPath: ReactLogo, description: 'Professional exp.'},
-	{ label: "Tailwind", rarity: 3, logoPath: ReactLogo, description: 'Professional exp.'},
-	{ label: "Vite", rarity: 3, logoPath: ReactLogo, description: 'Professional exp.'},
-	{ label: "React Aria", rarity: 3, logoPath: ReactLogo, description: 'Professional exp.'},
-	{ label: "Node.js", rarity: 3, logoPath: ReactLogo, description: 'Professional exp.'},
-	{ label: "Vitest", rarity: 3, logoPath: ReactLogo, description: 'Professional exp.'},
-	{ label: "Cypress", rarity: 3, logoPath: ReactLogo, description: 'Professional exp.'},
-	{ label: "Playwright", rarity: 3, logoPath: ReactLogo, description: 'Professional exp.'},
-	{ label: "Storybook", rarity: 3, logoPath: ReactLogo, description: 'Professional exp.'},
-	{ label: "Figma", rarity: 3, logoPath: ReactLogo, description: 'Professional exp.'},
-	{ label: "Docker", rarity: 3, logoPath: ReactLogo, description: 'Professional exp.'},
-	{ label: "Python", rarity: 3, logoPath: ReactLogo, description: 'Professional exp.'},
+	{ label: "React", rarity: "gold", logoPath: ReactLogo, description: 'Professional exp.'},
+	{ label: "TypeScript", rarity: "gold", logoPath: ReactLogo, description: 'Professional exp.'},
+	{ label: "NextJS", rarity: "silver", logoPath: ReactLogo, description: 'Professional exp.'},
+	{ label: "JavaScript", rarity: "silver", logoPath: ReactLogo, description: 'Professional exp.'},
+	{ label: "TanStack Query", rarity: "silver", logoPath: ReactLogo, description: 'Professional exp.'},
+	{ label: "TanStack Router", rarity: "silver", logoPath: ReactLogo, description: 'Professional exp.'},
+	{ label: "CSS Modules", rarity: "silver", logoPath: ReactLogo, description: 'Professional exp.'},
+	{ label: "Motion", rarity: "silver", logoPath: ReactLogo, description: 'Professional exp.'},
+	{ label: "Redux", rarity: "silver", logoPath: ReactLogo, description: 'Professional exp.'},
+	{ label: "Tailwind", rarity: "basic", logoPath: ReactLogo, description: 'Professional exp.'},
+	{ label: "Vite", rarity: "basic", logoPath: ReactLogo, description: 'Professional exp.'},
+	{ label: "React Aria", rarity: "basic", logoPath: ReactLogo, description: 'Professional exp.'},
+	{ label: "Node.js", rarity: "basic", logoPath: ReactLogo, description: 'Professional exp.'},
+	{ label: "Vitest", rarity: "basic", logoPath: ReactLogo, description: 'Professional exp.'},
+	{ label: "Cypress", rarity: "basic", logoPath: ReactLogo, description: 'Professional exp.'},
+	{ label: "Playwright", rarity: "basic", logoPath: ReactLogo, description: 'Professional exp.'},
+	{ label: "Storybook", rarity: "basic", logoPath: ReactLogo, description: 'Professional exp.'},
+	{ label: "Figma", rarity: "basic", logoPath: ReactLogo, description: 'Professional exp.'},
+	{ label: "Docker", rarity: "basic", logoPath: ReactLogo, description: 'Professional exp.'},
+	{ label: "Python", rarity: "basic", logoPath: ReactLogo, description: 'Professional exp.'},
 ];
 
 export function Skills() {

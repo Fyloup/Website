@@ -1,12 +1,14 @@
 import { useRef, type ReactNode } from "react"
 import styles from './SkillCard.module.css'
 import Point from '../../assets/Point.svg'
+import BackendType from '../../assets/skillcards/types/backendType.png'
 
-import { motion, useMotionValue, useSpring, useTransform, useMotionTemplate } from 'motion/react'
+import { motion, useMotionValue, useSpring, useTransform } from 'motion/react'
+import clsx from "clsx"
 
 type SkillCardProps = {
     label: string;
-    rarity: 10 | 5 | 3;
+    rarity: "gold" | "silver" | "basic";
     logo?: string;
     background?: ReactNode;
     description: string;
@@ -77,32 +79,31 @@ export function SkillCard({label, rarity, logo, description}: SkillCardProps) {
                 onMouseMove={handleOnMouseMove} 
                 onMouseLeave={handleOnMouseLeave} 
         >
-            {rarity === 10 ? (
-                <>
-                    <motion.div
-                        className={styles.cardGradient}
-                        style={{
-                            x: translateShineX,
-                            y: translateShineY
-                        }}
-                    />
+            {rarity === "gold" || rarity === "silver" ? (
+                <motion.div
+                    className={styles.cardShineEffect}
+                    style={{
+                        x: translateShineX,
+                        y: translateShineY
+                    }}
+                />
+            ) : null}
 
-                    <motion.div
-                        className={styles.cardGradient3}
-                        style={{
-                            x: translateX,
-                            y: translateY
-                        }}
-                    />
-
-                    <motion.div
-                        className={styles.cardGradient2}
-                        style={{
-                            x: translate2X,
-                            y: translate2Y
-                        }}
-                    />  
-                </>
+            <motion.div
+                className={clsx(styles.cardBaseRarityEffect, styles[rarity])}
+                style={{
+                    x: translateX,
+                    y: translateY
+                }}
+            />
+            {rarity === "gold" ? (
+                <motion.div
+                    className={styles.cardRainbowEffect}
+                    style={{
+                        x: translate2X,
+                        y: translate2Y
+                    }}
+                />
             ) : null}
             <motion.div 
                 className={styles.glare} 
@@ -117,8 +118,7 @@ export function SkillCard({label, rarity, logo, description}: SkillCardProps) {
                     <div className={styles.labelContainer}>
                         <div className={styles.label}>
                             {label}
-                            <div className={styles.type}>
-                            </div>
+                            <img className={styles.type} src={BackendType} alt="backend-type"/>
                         </div>
                     </div>
                     <div className={styles.illustrationWrapper}>
@@ -134,12 +134,9 @@ export function SkillCard({label, rarity, logo, description}: SkillCardProps) {
                     <div className={styles.descriptionWrapper}>
                         <div className={styles.description}>
                             <div className={styles.descriptionValue}>
-                                <div className={styles.type}>
-                                </div>
-                                <div className={styles.type}>
-                                </div>
-                                <div className={styles.type}>
-                                </div>
+                                <img className={styles.type} src={BackendType} alt="backend-type"/>
+                                <img className={styles.type} src={BackendType} alt="backend-type"/>
+                                <img className={styles.type} src={BackendType} alt="backend-type"/>
                             </div>
                             {description}
                         </div>

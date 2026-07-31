@@ -6,11 +6,10 @@
     height: 440px;
     width: 300px;
     transform-style: preserve-3d;
-    /* background-color: #FFE167; */
     overflow: hidden;
 }
 
-.cardGradient {
+.cardShineEffect {
     position: absolute;
     opacity: 100%;
     top: -100px;
@@ -20,7 +19,29 @@
     background-image: linear-gradient(145deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 17%, rgba(255, 255, 255, 1) 18%, rgba(255, 255, 255, 1) 19%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 34%, rgba(255, 255, 255, 1) 35%, rgba(255, 255, 255, 1) 36%, rgba(255, 255, 255, 1) 37%, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 1) 61%, rgba(255, 255, 255, 1) 62%, rgba(255, 255, 255, 1) 63%, rgba(255, 255, 255, 0) 65%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 81%, rgba(255, 255, 255, 1) 82%, rgba(255, 255, 255, 1) 83%);
 }
 
-.cardGradient2 {
+.cardBaseRarityEffect {
+    position: absolute;
+    opacity: 100%;
+    top: -100px;
+    left: -100px;
+    right: -100px;
+    bottom: -100px;
+    background-color: #FFE167;
+    background-repeat: no-repeat;
+    mix-blend-mode: screen;
+
+    &.gold {
+        background-color: transparent;
+        background-image: linear-gradient(145deg,rgba(237, 180, 30, 1) 20%, rgba(237, 180, 30, 1) 22%, rgba(255, 252, 1, 1) 23%, rgba(255, 252, 1, 1) 25%, rgba(248, 222, 53, 1) 26%, rgba(255, 246, 66, 1) 30%, rgba(202, 149, 34, 1) 31%, rgba(186, 135, 36, 1) 32%, rgba(186, 135, 36, 1) 33%, rgba(255, 246, 66, 1) 34%, rgba(186, 135, 36, 1) 38%, rgba(186, 135, 36, 1) 40%, rgba(255, 246, 66, 1) 45%, rgba(255, 246, 66, 1) 53%, rgba(136, 105, 28, 1) 55%, rgba(136, 105, 28, 1) 64%, rgba(255, 246, 66, 1) 66%, rgba(196, 175, 48, 1) 70%, rgba(140, 108, 32, 1) 72%, rgba(140, 108, 32, 1) 76%, rgba(254, 254, 139, 1) 78%);
+    }
+
+    &.silver {
+        background-color: transparent;
+        background-image: linear-gradient(145deg,rgba(148, 148, 148, 1) 20%, rgba(158, 158, 158, 1) 22%, rgba(227, 227, 227, 1) 23%, rgba(227, 227, 227, 1) 25%, rgba(199, 199, 199, 1) 26%, rgba(232, 232, 232, 1) 30%, rgba(138, 138, 138, 1) 31%, rgba(138, 138, 138, 1) 32%, rgba(138, 138, 138, 1) 33%, rgba(227, 227, 227, 1) 34%, rgba(158, 158, 158, 1) 38%, rgba(158, 158, 158, 1) 40%, rgba(227, 227, 227, 1) 45%, rgba(227, 227, 227, 1) 53%, rgba(102, 102, 102, 1) 55%, rgba(117, 117, 117, 1) 64%, rgba(227, 227, 227, 1) 66%, rgba(199, 199, 199, 1) 70%, rgba(102, 102, 102, 1) 72%, rgba(117, 117, 117, 1) 76%, rgba(227, 227, 227, 1) 78%);
+    }
+}
+
+.cardRainbowEffect {
     position: absolute;
     opacity: 100%;
     top: -100px;
@@ -29,18 +50,8 @@
     bottom: -100px;
     background-image: linear-gradient(145deg,rgba(255, 255, 255, 0) 24%, rgba(104, 220, 45, 1) 25%, rgba(116, 119, 174, 1) 26%, rgba(163, 93, 190, 1) 27%, rgba(221, 127, 135, 1) 28%, rgba(255, 255, 255, 0) 36%, rgba(255, 255, 255, 0) 37%, rgba(104, 220, 45, 1) 38%, rgba(116, 119, 174, 1) 39%, rgba(163, 93, 190, 1) 40%, rgba(221, 127, 135, 1) 41%, rgba(255, 255, 255, 0) 42%, rgba(255, 255, 255, 0) 70%, rgba(104, 220, 45, 1) 71%, rgba(116, 119, 174, 1) 72%, rgba(163, 93, 190, 1) 73%, rgba(221, 127, 135, 1) 74%, rgba(255, 255, 255, 0) 75%);
     background-repeat: no-repeat;
-}
+    /* mix-blend-mode: screen; */
 
-.cardGradient3 {
-    position: absolute;
-    opacity: 100%;
-    top: -100px;
-    left: -100px;
-    right: -100px;
-    bottom: -100px;
-    background-image: linear-gradient(145deg,rgba(237, 180, 30, 1) 20%, rgba(237, 180, 30, 1) 22%, rgba(255, 252, 1, 1) 23%, rgba(255, 252, 1, 1) 25%, rgba(248, 222, 53, 1) 26%, rgba(255, 246, 66, 1) 30%, rgba(202, 149, 34, 1) 31%, rgba(186, 135, 36, 1) 32%, rgba(186, 135, 36, 1) 33%, rgba(255, 246, 66, 1) 34%, rgba(186, 135, 36, 1) 38%, rgba(186, 135, 36, 1) 40%, rgba(255, 246, 66, 1) 45%, rgba(255, 246, 66, 1) 53%, rgba(136, 105, 28, 1) 55%, rgba(136, 105, 28, 1) 64%, rgba(255, 246, 66, 1) 66%, rgba(196, 175, 48, 1) 70%, rgba(140, 108, 32, 1) 72%, rgba(140, 108, 32, 1) 76%, rgba(254, 254, 139, 1) 78%);
-    background-repeat: no-repeat;
-    mix-blend-mode: screen;
 }
 
 .glare {
@@ -74,7 +85,8 @@
     height: 100%;
     width: 100%;
     background-color: #3777D7;
-    /* border: 1px solid rgb(67, 51, 1); */
+    border: 1px solid rgb(147, 147, 147);
+    border-radius: 6px;
 }
 
 .labelContainer {
@@ -105,14 +117,15 @@
     border-radius: 100px;
     width: 20px;
     height: 20px;
-    background-color: red;
+    border: 1px solid rgb(173, 173, 173);
+    /* background-color: red; */
 }
 
 .illustrationWrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 10px 10px 10px;
+    padding: 0 14px 14px 14px;
 }
 
 .illustrationContainer {
@@ -146,7 +159,8 @@
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
-    padding: 40px 10px 10px 10px;
+    gap: 8px    ;
+    padding: 0 10px 10px 10px;
     height: 100%;
     width: 100%;
 }
@@ -163,7 +177,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    gap: 30px;
+    gap: 8px;
     font-family: GillSansCondensed; 
     text-align: start;
     color: black;
