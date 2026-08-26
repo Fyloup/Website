@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { Download, Github, Linkedin, Mail, User } from "lucide-react";
 
 import styles from "./HeroHeader.module.css";
 
@@ -6,6 +7,14 @@ const rise = {
 	hidden: { opacity: 0, y: 24 },
 	visible: { opacity: 1, y: 0 },
 };
+
+const EMAIL = "sirvente.philippe@gmail.com";
+
+const links = [
+	{ href: "https://www.linkedin.com/in/philippe-smc/", label: "LinkedIn", icon: Linkedin },
+	{ href: "https://github.com/Fyloup", label: "GitHub", icon: Github },
+	{ href: `mailto:${EMAIL}`, label: "Email", icon: Mail },
+];
 
 export function HeroHeader() {
 	return (
@@ -18,7 +27,7 @@ export function HeroHeader() {
 			</div>
 
 			<motion.div
-				className={styles.content}
+				className={styles.grid}
 				initial="hidden"
 				animate="visible"
 				variants={{
@@ -29,31 +38,59 @@ export function HeroHeader() {
 				}}
 			>
 				<motion.div
-					className={styles.eyebrow}
-					variants={rise}
-					transition={{ duration: 0.5, ease: "easeOut" }}
-				>
-					Frontend Developer · React &amp; TypeScript
-				</motion.div>
-
-				<motion.h1
-					className={styles.title}
-					variants={rise}
-					transition={{ type: "spring", stiffness: 110, damping: 18 }}
-				>
-					Building fast, considered web products — front to back.
-				</motion.h1>
-
-				<motion.p
-					className={styles.intro}
+					className={styles.text}
 					variants={rise}
 					transition={{ duration: 0.6, ease: "easeOut" }}
 				>
-					I'm Philippe — a web developer with 5 years of experience specializing
-					in frontend architecture, technology stack selection and scalable
-					design systems. I audit, modernize and scale frontend applications,
-					and care about the small details that make software feel effortless.
-				</motion.p>
+					<h1 className={styles.name}>Philippe Sirvente-Maroto</h1>
+					<p className={styles.title}>Web Developer</p>
+					<p className={styles.intro}>
+						Frontend developer with 5 years of experience, I turn complex
+						requirements into simple, intuitive interfaces.
+					</p>
+				</motion.div>
+
+				<motion.div
+					className={styles.avatarWrap}
+					variants={rise}
+					transition={{ type: "spring", stiffness: 110, damping: 18 }}
+				>
+					<div className={styles.avatar}>
+						<User className={styles.avatarIcon} strokeWidth={1.25} aria-hidden="true" />
+					</div>
+				</motion.div>
+
+				<motion.div
+					className={styles.actions}
+					variants={rise}
+					transition={{ duration: 0.5, ease: "easeOut" }}
+				>
+					{links.map(({ href, label, icon: Icon }) => (
+						<a
+							key={label}
+							href={href}
+							target={href.startsWith("http") ? "_blank" : undefined}
+							rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+							className={styles.iconLink}
+							aria-label={label}
+						>
+							<Icon size={18} strokeWidth={1.75} />
+						</a>
+					))}
+					<a href="/cv.pdf" download className={styles.cvButton}>
+						<Download size={16} strokeWidth={1.75} />
+						Download CV
+					</a>
+				</motion.div>
+
+				<motion.div
+					className={styles.badge}
+					variants={rise}
+					transition={{ duration: 0.5, ease: "easeOut" }}
+				>
+					<span className={styles.badgeDot} />
+					<span className={styles.badgeLabel}>Available for work</span>
+				</motion.div>
 			</motion.div>
 		</section>
 	);

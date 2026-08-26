@@ -1,0 +1,119 @@
+.section {
+	max-width: var(--dc-maxw);
+	width: 100%;
+	margin: 0 auto;
+	padding: 60px 32px 60px;
+}
+
+.header {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	padding-bottom: 28px;
+}
+
+.kicker {
+	font-family: var(--dc-mono);
+	font-size: 12px;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--dc-text-5);
+}
+
+.card {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	width: 100%;
+	min-height: 220px;
+	border-radius: 20px;
+	border: 1px solid var(--dc-line-strong);
+	background: var(--dc-panel);
+	overflow: hidden;
+}
+
+.logoCol {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 32px;
+	background: rgba(255, 255, 255, 0.03);
+	border-right: 1px solid var(--dc-line);
+}
+
+.logoPlaceholder {
+	width: clamp(96px, 10vw, 140px);
+	aspect-ratio: 1;
+	border-radius: 50%;
+	border: 1px dashed var(--dc-line-strong);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.logoIcon {
+	width: 42%;
+	height: 42%;
+	color: var(--dc-text-5);
+}
+
+.textCol {
+	min-width: 0;
+	padding: 40px 44px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 8px;
+}
+
+.period {
+	font-family: var(--dc-mono);
+	font-size: 12px;
+	letter-spacing: 0.06em;
+	color: var(--dc-text-5);
+}
+
+.school {
+	font-family: var(--dc-display);
+	font-weight: 600;
+	font-size: clamp(24px, 3.2vw, 32px);
+	letter-spacing: -0.02em;
+	line-height: 1.1;
+	color: var(--dc-text);
+	margin: 4px 0 0;
+}
+
+.diploma {
+	font-family: var(--dc-mono);
+	font-size: 12.5px;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	color: var(--dc-accent-bright);
+}
+
+.description {
+	font-size: 15.5px;
+	line-height: 1.6;
+	color: var(--dc-text-3);
+	max-width: 56ch;
+	margin: 10px 0 0;
+}
+
+@media (max-width: 720px) {
+	.section {
+		padding: 48px 24px 48px;
+	}
+
+	.card {
+		grid-template-columns: 1fr;
+	}
+
+	.logoCol {
+		border-right: none;
+		border-bottom: 1px solid var(--dc-line);
+		padding: 28px;
+	}
+
+	.textCol {
+		padding: 28px;
+	}
+}

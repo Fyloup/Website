@@ -1,7 +1,6 @@
 .root {
 	position: relative;
 	width: 100%;
-	border-top: 1px solid var(--dc-line);
 	overflow: hidden;
 }
 
@@ -21,7 +20,7 @@
 	position: relative;
 	max-width: var(--dc-maxw);
 	margin: 0 auto;
-	padding: 110px 32px 96px;
+	padding: 110px 32px 400px;
 }
 
 .kicker {
@@ -54,27 +53,60 @@
 	padding-bottom: 3px;
 }
 
-.socials {
+.actions {
 	display: flex;
-	gap: 24px;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 14px;
 	margin-top: 44px;
+}
+
+.actionButton {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 12px 20px;
+	border-radius: 999px;
+	border: 1px solid var(--dc-line-strong);
+	color: var(--dc-text-3);
 	font-family: var(--dc-mono);
-	font-size: 12px;
-	letter-spacing: 0.04em;
-}
-
-.social {
-	color: var(--dc-text-4);
+	font-size: 13px;
+	letter-spacing: 0.02em;
 	text-decoration: none;
-	transition: color 0.2s ease;
+	transition:
+		color 0.2s ease,
+		border-color 0.2s ease,
+		background 0.2s ease;
 }
 
-.social:hover {
+.actionButton:hover {
 	color: var(--dc-text);
+	border-color: var(--dc-accent-bright);
+	background: var(--dc-panel);
+}
+
+.cvButton {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 12px 20px;
+	border-radius: 999px;
+	background: var(--dc-accent);
+	color: var(--dc-text);
+	font-family: var(--dc-mono);
+	font-size: 13px;
+	letter-spacing: 0.02em;
+	text-decoration: none;
+	transition: background 0.2s ease;
+}
+
+.cvButton:hover {
+	background: var(--dc-accent-bright);
+	color: var(--dc-bg);
 }
 
 @media (max-width: 720px) {
 	.inner {
-		padding: 80px 24px 72px;
+		padding: 80px 24px 240px;
 	}
 }

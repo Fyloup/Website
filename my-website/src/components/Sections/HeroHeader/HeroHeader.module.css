@@ -67,39 +67,127 @@
 	animation: floatY 9s ease-in-out infinite;
 }
 
-.content {
+.grid {
 	position: relative;
 	z-index: 2;
+	display: grid;
+	grid-template-columns: 1.15fr auto;
+	grid-template-areas:
+		"text avatar"
+		"actions badge";
+	column-gap: 64px;
+	align-items: start;
 }
 
-.eyebrow {
-	font-family: var(--dc-mono);
-	font-size: 12px;
-	letter-spacing: 0.14em;
-	text-transform: uppercase;
-	color: var(--dc-text-5);
+.text {
+	grid-area: text;
+}
+
+.name {
+	font-family: var(--dc-display);
+	font-weight: 600;
+	font-size: clamp(36px, 5.6vw, 64px);
+	line-height: 1.04;
+	letter-spacing: -0.03em;
+	margin: 0;
+	max-width: 16ch;
+	color: var(--dc-text);
 }
 
 .title {
-	font-family: var(--dc-display);
-	font-weight: 600;
-	font-size: clamp(40px, 6.4vw, 80px);
-	line-height: 1;
-	letter-spacing: -0.03em;
-	margin: 26px 0 0;
-	max-width: 16ch;
-	color: var(--dc-text);
+	font-family: var(--dc-mono);
+	font-size: 14px;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--dc-accent-bright);
+	margin: 16px 0 0;
 }
 
 .intro {
 	font-size: clamp(17px, 2vw, 21px);
 	line-height: 1.55;
 	color: var(--dc-text-3);
-	max-width: 56ch;
-	margin: 34px 0 0;
+	max-width: 48ch;
+	margin: 26px 0 0;
+}
+
+.avatarWrap {
+	grid-area: avatar;
+	justify-self: center;
+}
+
+.avatar {
+	width: clamp(140px, 16vw, 200px);
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background: var(--dc-panel);
+	border: 1px dashed var(--dc-line-strong);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.avatarIcon {
+	width: 42%;
+	height: 42%;
+	color: var(--dc-text-5);
+}
+
+.actions {
+	grid-area: actions;
+	align-self: end;
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	margin-top: 40px;
+}
+
+.iconLink {
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	border: 1px solid var(--dc-line-strong);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--dc-text-3);
+	transition:
+		color 0.2s ease,
+		border-color 0.2s ease,
+		background 0.2s ease;
+}
+
+.iconLink:hover {
+	color: var(--dc-text);
+	border-color: var(--dc-accent-bright);
+	background: var(--dc-panel);
+}
+
+.cvButton {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 12px 20px;
+	border-radius: 999px;
+	background: var(--dc-accent);
+	color: var(--dc-text);
+	font-family: var(--dc-mono);
+	font-size: 13px;
+	letter-spacing: 0.02em;
+	text-decoration: none;
+	transition: background 0.2s ease;
+}
+
+.cvButton:hover {
+	background: var(--dc-accent-bright);
+	color: var(--dc-bg);
 }
 
 .badge {
+	grid-area: badge;
+	align-self: end;
+	justify-self: center;
 	display: inline-flex;
 	align-items: center;
 	gap: 10px;
@@ -108,6 +196,8 @@
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	border-radius: 999px;
 	background: var(--dc-panel);
+	height: 44px;
+	box-sizing: border-box;
 }
 
 .badgeDot {
@@ -162,5 +252,29 @@
 
 	.blobs {
 		display: none;
+	}
+
+	.grid {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"text"
+			"avatar"
+			"badge"
+			"actions";
+		row-gap: 8px;
+	}
+
+	.avatarWrap,
+	.badge {
+		justify-self: start;
+	}
+
+	.badge {
+		align-self: start;
+	}
+
+	.actions {
+		align-self: start;
+		flex-wrap: wrap;
 	}
 }

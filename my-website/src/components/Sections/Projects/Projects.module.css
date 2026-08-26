@@ -2,11 +2,32 @@
 	max-width: var(--dc-maxw);
 	width: 100%;
 	margin: 0 auto;
-	padding: 0 32px;
+	padding: 60px 32px 0;
+}
+
+.header {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	padding-bottom: 28px;
+}
+
+.kicker {
+	font-family: var(--dc-mono);
+	font-size: 12px;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--dc-text-5);
 }
 
 .list {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+}
+
+@media (max-width: 720px) {
+	.root {
+		padding: 48px 24px 0;
+	}
 }

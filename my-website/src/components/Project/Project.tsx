@@ -33,7 +33,8 @@ export function Project({data}: ProjectProps) {
         highlights,
         tags,
         logoPath,
-        viewButtonText
+        viewButtonText,
+        splashSections
     } = data
 
     function handleViewButtonClick() {
@@ -171,10 +172,11 @@ export function Project({data}: ProjectProps) {
                                 </button>
                             </div>
                         </div>
-                        <SplashScreen 
-                            backgroundColor={"#fff"} 
+                        <SplashScreen
+                            backgroundColor={"#fff"}
                             isOpen={isSplashScreenOpen}
                             isReady={isSplashScreenContentOpen}
+                            sections={splashSections}
                             onLeave={handleOnSplashScreenLeave}
                         />
                     </motion.div>

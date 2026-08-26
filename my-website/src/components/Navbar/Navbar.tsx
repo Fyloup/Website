@@ -3,7 +3,7 @@ import styles from "./Navbar.module.css";
 const links = [
 	{ href: "#work", label: "Work" },
 	{ href: "#skills", label: "Skills" },
-	{ href: "#about", label: "About" },
+	{ href: "#education", label: "Education" },
 	{ href: "#contact", label: "Contact" },
 ];
 

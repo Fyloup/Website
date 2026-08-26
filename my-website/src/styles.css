@@ -7,6 +7,10 @@
   --dc-bg: #16171d;
   --dc-panel: #1e2029;
 
+  /* Accent */
+
+  --accent: #2A9D8F;
+
   /* Text ramp (bright -> faint) */
   --dc-text: #ececf1;
   --dc-text-2: #b4b4be;
@@ -24,6 +28,10 @@
   --dc-accent-bright: #8b9ed8;
   --dc-accent-glow: rgba(65, 97, 191, 0.45);
   --dc-star: #f6a623;
+
+  /* Skill mastery ramp: electric blue (mastered) -> white (basic) -> transparent (neutral) */
+  --dc-mastery-mastered: #2f8dff;
+  --dc-mastery-basic: #ffffff;
 
   /* Type families */
   --dc-display: "Space Grotesk", system-ui, sans-serif;

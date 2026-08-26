@@ -1,12 +1,12 @@
 import { useRef, type ReactNode } from "react"
-import styles from './SkillCard.module.css'
+import styles from './PokeSkillCard.module.css'
 import Point from '../../assets/Point.svg'
 import BackendType from '../../assets/skillcards/types/backendType.png'
 
 import { motion, useMotionValue, useSpring, useTransform } from 'motion/react'
 import clsx from "clsx"
 
-type SkillCardProps = {
+type PokeSkillCardProps = {
     label: string;
     rarity: "gold" | "silver" | "basic";
     logo?: string;
@@ -14,7 +14,7 @@ type SkillCardProps = {
     description: string;
 }
 
-export function SkillCard({label, rarity, logo, description}: SkillCardProps) {
+export function PokeSkillCard({label, rarity, logo, description}: PokeSkillCardProps) {
 
     const cardRef = useRef<HTMLDivElement>(null)
 

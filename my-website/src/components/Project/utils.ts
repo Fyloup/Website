@@ -3,6 +3,12 @@ import IrisLogo from '../../assets/projects/iris/irisLogo.png'
 import MemoryLogo from '../../assets/projects/memory/memoryLogo.svg'
 import SustainLogo from '../../assets/projects/sustain/sustainLogo.png'
 
+export type SplashSection = {
+    title: string;
+    body: string;
+    bullets?: string[];
+}
+
 export type ProjectEntry = {
     id: string;
     name: string;
@@ -14,6 +20,7 @@ export type ProjectEntry = {
     tags: string[];
     logoPath: string;
     viewButtonText: string;
+    splashSections: SplashSection[];
 }
 
 export const projectsData: ProjectEntry[] = [
@@ -39,7 +46,33 @@ export const projectsData: ProjectEntry[] = [
             "Redux",
         ],
         logoPath: IrisLogo,
-        viewButtonText: "Meet Iris"
+        viewButtonText: "Meet Iris",
+        splashSections: [
+            {
+                title: "Context",
+                body: "Iris is Egis Group's internal AI assistant, built to support employees across their business use cases with an interface that adapts dynamically to the context of use.",
+            },
+            {
+                title: "Role",
+                body: "Frontend UI/UX developer within a team of 16. Responsible for designing and building the entire interface, with a particular focus on the chat module. Stack: React, SASS, Django, Docker, Python, JavaScript, CSS Modules.",
+            },
+            {
+                title: "The chat",
+                body: "Real-time streaming with an interface that adapts to the use case.",
+                bullets: [
+                    "Flows: trigger pre-configured prompts with \"@\" in the chat input",
+                    "Multi-format handling: text, images, code and documents",
+                ],
+            },
+            {
+                title: "Gamification",
+                body: "Built challenge systems with badges, a leaderboard, and a profile featuring progression and XP.",
+            },
+            {
+                title: "Results",
+                body: "5,000 daily active users, deployed to 18,000 employees across 70 countries. Winner of the FCI Awards, large enterprise category — \"Étincelle d'Or\".",
+            },
+        ],
     },
     {
         id: "memory",
@@ -56,7 +89,25 @@ export const projectsData: ProjectEntry[] = [
 		],
 		tags: ["React", "TypeScript", "Vite", "Motion", "CSS Modules"], 
         logoPath: MemoryLogo,
-        viewButtonText: "Discover Memory"
+        viewButtonText: "Discover Memory",
+        splashSections: [
+            {
+                title: "Context",
+                body: "An internal tool centralizing the group's engineering projects.",
+            },
+            {
+                title: "Role",
+                body: "Full-stack developer in charge of a large frontend scope, with integration from frontend components down to the backend. Stack: React, TypeScript, Python, Django, CSS Modules.",
+            },
+            {
+                title: "Challenge",
+                body: "Handling large volumes of data with project versioning and tables spanning several thousand rows — without degrading performance or user experience.",
+            },
+            {
+                title: "Results",
+                body: "Deployed alongside Iris. Lets engineers find every piece of company data they need in one place — a major gain in time and organization.",
+            },
+        ],
 	},
 	{
         id: "sustain",
@@ -73,6 +124,24 @@ export const projectsData: ProjectEntry[] = [
 		],
 		tags: ["React", "TypeScript", "Ant Design", "Figma", "Design System"],
         logoPath: SustainLogo,
-        viewButtonText: "Discover SustainEcho"
+        viewButtonText: "Discover SustainEcho",
+        splashSections: [
+            {
+                title: "Context",
+                body: "SustainEcho is a carbon optimization platform for the construction industry — a B2B startup helping construction companies find alternative, more eco-efficient materials while providing carbon assessments.",
+            },
+            {
+                title: "Role",
+                body: "Frontend UI/UX developer, in my final year at Epitech, within a team of about ten people. Led and fully redesigned the interface and built a complete design system. Developed components from scratch (tables, dashboards). Stack: React, JavaScript, CSS, Python, Django.",
+            },
+            {
+                title: "Challenge",
+                body: "First large-scale project without prior professional experience, joining a project already in progress. Rapid upskilling in a fast-paced startup environment.",
+            },
+            {
+                title: "Results",
+                body: "Acquired by the Egis group after one year — now commercialized under the name Emersus.",
+            },
+        ],
 	}
 ]

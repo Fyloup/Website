@@ -7,6 +7,10 @@ export function Projects() {
 
 	return (
 		<section id="work" className={styles.root}>
+			<div className={styles.header}>
+				<span className={styles.kicker}>Work</span>
+			</div>
+
 			<div className={styles.list}>
 				{projectsData.map((project) => {
 
