@@ -14,7 +14,7 @@
 
 .kicker,
 .hint {
-	font-family: var(--dc-mono);
+	font-family: var(--dc-legible);
 	font-size: 24px;
 	color: var(--dc-text-5);
 }

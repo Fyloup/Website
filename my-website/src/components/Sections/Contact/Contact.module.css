@@ -12,11 +12,10 @@
 }
 
 .kicker {
-	font-family: var(--dc-mono);
-	font-size: 12px;
-	letter-spacing: 0.14em;
-	text-transform: uppercase;
+	font-family: var(--dc-legible);
+	font-size: 24px;
 	color: var(--dc-text-5);
+	text-transform: uppercase;
 }
 
 .title {

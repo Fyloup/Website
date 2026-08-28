@@ -51,10 +51,9 @@
 
 .name {
 	min-width: 0;
-	font-family: var(--dc-display);
+	font-family: var(--dc-legible);
 	font-weight: 600;
 	font-size: 16px;
-	letter-spacing: -0.01em;
 	color: var(--dc-text);
 	overflow: hidden;
 	text-overflow: ellipsis;

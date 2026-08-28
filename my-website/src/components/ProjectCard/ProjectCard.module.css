@@ -43,7 +43,7 @@
 }
 
 .index {
-    font-family: "Medula One", system-ui;
+    font-family: var(--dc-legible);
     font-size: 72px;
     line-height: 1;
     color: var(--card-accent);
@@ -79,7 +79,7 @@
 
 .name {
     margin: 0;
-    font-family: var(--heading);
+    font-family: var(--dc-legible);
     font-size: 32px;
     line-height: 1.1;
     letter-spacing: -0.5px;

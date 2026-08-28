@@ -25,10 +25,8 @@
 }
 
 .name {
-	font-family: var(--dc-display);
-	font-weight: 600;
+	font-family: var(--dc-legible);
 	font-size: clamp(23px, 3vw, 34px);
-	letter-spacing: -0.015em;
 	line-height: 1.1;
 	color: var(--dc-text);
 }
@@ -84,15 +82,15 @@
 }
 
 .panelContent {
-	padding: 0 40px;
+	padding: 0 0 0 40px;
 }
 
 .description {
-	font-size: 16.5px;
+	font-size: 1rem;
 	line-height: 1.6;
 	color: var(--dc-text-2);
+	font-family: var(--dc-legible);
 	margin: 0;
-	max-width: 46ch;
 }
 
 .highlights {
@@ -145,8 +143,9 @@
 .diveButtonContainer {
 	position: relative;
 	display: flex;
-	align-items: flex-start;
+	align-items: center;
 	justify-content: center;
+	height: 100%;
 }
 
 .splashShape {

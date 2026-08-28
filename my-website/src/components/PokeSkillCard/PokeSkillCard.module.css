@@ -103,9 +103,9 @@
     font-size: 20px;
     width: 100%;
     height: 100%;
-    font-family: "Medula One", system-ui;
+    font-family: var(--dc-legible);
     font-style: normal;
-    font-family: GillSansCondensedBold;
+    font-family: var(--dc-legible);
 }
 
 .type {
@@ -174,7 +174,7 @@
     align-items: center;
     justify-content: flex-start;
     gap: 8px;
-    font-family: GillSansCondensed; 
+    font-family: var(--dc-legible);
     text-align: start;
     color: black;
     font-size: 1.2rem;
@@ -183,7 +183,7 @@
 .subDescription {
     color: black;
     font-size: 0.8rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: var(--dc-legible);
     line-height: 18px;
 }
 
@@ -194,7 +194,7 @@
     height: 164px;
     width: 164px;
     color: white;
-    font-family: "Medula One", system-ui;
+    font-family: var(--dc-legible);
     font-size: 96px;
     line-height: 1;
     text-transform: uppercase;
