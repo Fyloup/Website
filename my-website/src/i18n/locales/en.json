@@ -14,8 +14,7 @@
 	"hero": {
 		"title": "Web Developer",
 		"intro": "Frontend developer with 5 years of experience, I turn complex requirements into simple, intuitive interfaces.",
-		"downloadCv": "Download CV",
-		"available": "Available for work"
+		"downloadCv": "Download CV"
 	},
 	"projects": {
 		"kicker": "Work",
@@ -127,9 +126,11 @@
 		"kicker": "Stack & Skills",
 		"categories": {
 			"Frontend": "Frontend",
+			"Build tools": "Build tools",
 			"Frontend libraries": "Frontend libraries",
 			"Backend": "Backend",
 			"Testing": "Testing",
+			"Version control": "Version control",
 			"Infra": "Infra",
 			"Tools": "Tools",
 			"AI Tools": "AI Tools",

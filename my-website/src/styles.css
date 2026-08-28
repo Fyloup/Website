@@ -16,12 +16,12 @@
   --dc-text-2: #33373b;
   --dc-text-3: #4c5157;
   --dc-text-4: #6b7076;
-  --dc-text-5: #8a8f95;
+  --dc-text-5: #656768;
   --dc-text-6: #a6abb0;
 
   /* Lines */
   --dc-line: rgba(22, 24, 26, 0.12);
-  --dc-line-strong: rgba(22, 24, 26, 0.2);
+  --dc-line-strong: rgb(193, 193, 193);
 
   /* Accent: blue base + deeper-blue emphasis */
   --dc-accent: #2462f2;

@@ -1,7 +1,9 @@
-import { Download, Github, Linkedin, Mail, User } from "lucide-react";
+import { Download, Github, Linkedin, Mail } from "lucide-react";
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 
+import avatar from "#/assets/avatar.jpg";
+import { getCvAsset } from "#/i18n";
 import styles from "./HeroHeader.module.css";
 
 const rise = {
@@ -22,7 +24,8 @@ const links = [
 ];
 
 export function HeroHeader() {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+	const cv = getCvAsset(i18n.language);
 
 	return (
 		<section id="top" className={styles.root}>
@@ -42,7 +45,7 @@ export function HeroHeader() {
 					variants={rise}
 					transition={{ duration: 0.6, ease: "easeOut" }}
 				>
-					<h1 className={styles.name}>Philippe Sirvente-Maroto</h1>
+					<h1 className={styles.name}>Philippe <br/> Sirvente-Maroto</h1>
 					<p className={styles.title}>{t("hero.title")}</p>
 					<p className={styles.intro}>{t("hero.intro")}</p>
 				</motion.div>
@@ -53,10 +56,10 @@ export function HeroHeader() {
 					transition={{ type: "spring", stiffness: 110, damping: 18 }}
 				>
 					<div className={styles.avatar}>
-						<User
-							className={styles.avatarIcon}
-							strokeWidth={1.25}
-							aria-hidden="true"
+						<img
+							className={styles.avatarImg}
+							src={avatar}
+							alt="Philippe Sirvente-Maroto"
 						/>
 					</div>
 				</motion.div>
@@ -78,19 +81,10 @@ export function HeroHeader() {
 							<Icon size={18} strokeWidth={1.75} />
 						</a>
 					))}
-					<a href="/cv.pdf" download className={styles.cvButton}>
+					<a href={cv.href} download={cv.filename} className={styles.cvButton}>
 						<Download size={16} strokeWidth={1.75} />
 						{t("hero.downloadCv")}
 					</a>
-				</motion.div>
-
-				<motion.div
-					className={styles.badge}
-					variants={rise}
-					transition={{ duration: 0.5, ease: "easeOut" }}
-				>
-					<span className={styles.badgeDot} />
-					<span className={styles.badgeLabel}>{t("hero.available")}</span>
 				</motion.div>
 			</motion.div>
 		</section>

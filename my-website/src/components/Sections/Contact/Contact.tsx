@@ -2,6 +2,7 @@ import { Download, Github, Linkedin, Mail } from "lucide-react";
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 
+import { getCvAsset } from "#/i18n";
 import styles from "./Contact.module.css";
 
 const EMAIL = "sirvente.philippe@gmail.com";
@@ -21,11 +22,11 @@ const links = [
 ];
 
 export function Contact() {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+	const cv = getCvAsset(i18n.language);
 
 	return (
 		<section id="contact" className={styles.root}>
-			<span className={styles.blob} aria-hidden="true" />
 			<motion.div
 				className={styles.inner}
 				initial={{ opacity: 0, y: 24 }}
@@ -51,7 +52,7 @@ export function Contact() {
 							{t(labelKey)}
 						</a>
 					))}
-					<a href="/cv.pdf" download className={styles.cvButton}>
+					<a href={cv.href} download={cv.filename} className={styles.cvButton}>
 						<Download size={16} strokeWidth={1.75} />
 						{t("contact.downloadCv")}
 					</a>

@@ -4,18 +4,6 @@
 	overflow: hidden;
 }
 
-.blob {
-	position: absolute;
-	bottom: -80px;
-	right: 60px;
-	width: 200px;
-	height: 200px;
-	border-radius: 50%;
-	background: var(--dc-accent);
-	opacity: 0.1;
-	pointer-events: none;
-}
-
 .inner {
 	position: relative;
 	max-width: var(--dc-maxw);

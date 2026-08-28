@@ -1,6 +1,6 @@
-import { GraduationCap } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
+import EpitechLogo from "../../../assets/education/epitechLogo.svg";
 import styles from "./Education.module.css";
 
 export function Education() {
@@ -15,10 +15,10 @@ export function Education() {
 			<div className={styles.card}>
 				<div className={styles.logoCol}>
 					<div className={styles.logoPlaceholder}>
-						<GraduationCap
-							className={styles.logoIcon}
-							strokeWidth={1.25}
-							aria-hidden="true"
+						<img
+							src={EpitechLogo}
+							alt={t("education.school")}
+							className={styles.logo}
 						/>
 					</div>
 				</div>

@@ -14,8 +14,7 @@
 	"hero": {
 		"title": "Développeur Web",
 		"intro": "Développeur frontend avec 5 ans d'expérience, je transforme des besoins complexes en interfaces simples et intuitives.",
-		"downloadCv": "Télécharger le CV",
-		"available": "Disponible pour une mission"
+		"downloadCv": "Télécharger le CV"
 	},
 	"projects": {
 		"kicker": "Projets",
@@ -127,9 +126,11 @@
 		"kicker": "Stack & Compétences",
 		"categories": {
 			"Frontend": "Frontend",
+			"Build tools": "Outils de build",
 			"Frontend libraries": "Bibliothèques frontend",
 			"Backend": "Backend",
 			"Testing": "Tests",
+			"Version control": "Gestion de versions",
 			"Infra": "Infra",
 			"Tools": "Outils",
 			"AI Tools": "Outils IA",

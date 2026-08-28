@@ -8,6 +8,21 @@ import fr from "./locales/fr.json";
 export const SUPPORTED_LANGUAGES = ["en", "fr"] as const;
 export type SupportedLanguage = (typeof SUPPORTED_LANGUAGES)[number];
 
+/**
+ * Resolve the CV PDF matching the active language: the EN résumé for English,
+ * the FR résumé for French (with a nice download filename for either).
+ */
+export function getCvAsset(language: string) {
+	const lang: SupportedLanguage = language.toLowerCase().startsWith("fr")
+		? "fr"
+		: "en";
+
+	return {
+		href: `/cv-${lang}.pdf`,
+		filename: `CV_Philippe_SIRVENTE-MAROTO_${lang.toUpperCase()}.pdf`,
+	};
+}
+
 export const resources = {
 	en: { translation: en },
 	fr: { translation: fr },

@@ -1,9 +1,9 @@
 .card {
 	display: flex;
-	align-items: center;
-	gap: 12px;
-	padding: 12px 16px;
-	border-radius: 12px;
+	align-items: flex-start;
+	gap: 14px;
+	padding: 16px 18px;
+	border-radius: 14px;
 	border: 1px solid var(--dc-line);
 	background: var(--dc-panel);
 	transition:
@@ -11,45 +11,65 @@
 		background 0.2s ease;
 }
 
-.card:hover {
-	border-color: var(--dc-line-strong);
-	background: rgba(22, 24, 26, 0.04);
-}
-
 .logo {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex: none;
-	width: 34px;
-	height: 34px;
-	border-radius: 8px;
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
 	background: rgba(22, 24, 26, 0.05);
 }
 
 .icon {
 	display: block;
-	width: 20px;
-	height: 20px;
+	width: 24px;
+	height: 24px;
 	object-fit: contain;
 }
 
 .monogram {
 	font-family: var(--dc-display);
 	font-weight: 600;
-	font-size: 13px;
+	font-size: 15px;
 	letter-spacing: -0.02em;
 	color: var(--dc-text-4);
+}
+
+.emoji {
+	font-size: 20px;
+	line-height: 1;
+}
+
+.body {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	min-width: 0;
 }
 
 .name {
 	min-width: 0;
 	font-family: var(--dc-display);
 	font-weight: 600;
-	font-size: 14px;
+	font-size: 16px;
 	letter-spacing: -0.01em;
 	color: var(--dc-text);
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+}
+
+.description {
+	min-width: 0;
+	font-family: var(--dc-body);
+	font-size: 13.5px;
+	line-height: 1.5;
+	color: var(--dc-text-4);
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	line-clamp: 3;
+	overflow: hidden;
 }

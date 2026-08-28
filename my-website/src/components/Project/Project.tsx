@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { SplashScreen } from "../SplashScreen/SplashScreen";
 import styles from "./Project.module.css";
-import type { ProjectEntry } from "./utils";
+import { type ProjectEntry, tagIcons } from "./utils";
 
 type ProjectProps = {
 	data: ProjectEntry;
@@ -128,11 +128,24 @@ export function Project({ data }: ProjectProps) {
 									))}
 								</ul>
 								<div className={styles.tags}>
-									{tags.map((tag) => (
-										<span key={tag} className={styles.tag}>
-											{tag}
-										</span>
-									))}
+									{tags.map((tag) => {
+										const icon = tagIcons[tag];
+
+										return (
+											<span key={tag} className={styles.tag} title={tag}>
+												{icon && (
+													<img
+														src={icon}
+														alt=""
+														width={16}
+														height={16}
+														aria-hidden="true"
+													/>
+												)}
+												{tag}
+											</span>
+										);
+									})}
 								</div>
 							</div>
 							<div className={styles.diveButtonContainer}>
