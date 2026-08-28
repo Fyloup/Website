@@ -117,7 +117,7 @@ export function Project({ data }: ProjectProps) {
 						transition={{ duration: 0.4, ease: [0.2, 0.7, 0.2, 1] }}
 					>
 						<div className={styles.panel}>
-							<div className={styles.panelText}>
+							<div className={styles.panelContent}>
 								<p className={styles.description}>{description}</p>
 								<ul className={styles.highlights}>
 									{highlights.map((highlight) => (
@@ -127,26 +127,6 @@ export function Project({ data }: ProjectProps) {
 										</li>
 									))}
 								</ul>
-								<div className={styles.tags}>
-									{tags.map((tag) => {
-										const icon = tagIcons[tag];
-
-										return (
-											<span key={tag} className={styles.tag} title={tag}>
-												{icon && (
-													<img
-														src={icon}
-														alt=""
-														width={16}
-														height={16}
-														aria-hidden="true"
-													/>
-												)}
-												{tag}
-											</span>
-										);
-									})}
-								</div>
 							</div>
 							<div className={styles.diveButtonContainer}>
 								{createPortal(
@@ -187,6 +167,26 @@ export function Project({ data }: ProjectProps) {
 								>
 									{viewButtonText}
 								</button>
+							</div>
+							<div className={styles.tags}>
+								{tags.map((tag) => {
+									const icon = tagIcons[tag];
+
+									return (
+										<span key={tag} className={styles.tag} title={tag}>
+											{icon && (
+												<img
+													src={icon}
+													alt=""
+													width={16}
+													height={16}
+													aria-hidden="true"
+												/>
+											)}
+											{tag}
+										</span>
+									);
+								})}
 							</div>
 						</div>
 						<SplashScreen

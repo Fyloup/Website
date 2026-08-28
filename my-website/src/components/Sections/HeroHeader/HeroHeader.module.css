@@ -23,8 +23,8 @@
 }
 
 .name {
-	font-family: var(--dc-display);
-	font-weight: 600;
+	font-family: var(--dc-legible);
+	font-weight: 500;
 	font-size: clamp(36px, 5.6vw, 64px);
 	line-height: 1.2;
 	margin: 0;

@@ -1,6 +1,6 @@
-import IrisLogo from "../../assets/projects/iris/irisLogo.png";
-import MemoryLogo from "../../assets/projects/memory/memoryLogo.svg";
-import SustainLogo from "../../assets/projects/sustain/sustainLogo.png";
+import IrisLogo from "#/assets/projects/iris/irisLogo.png";
+import MemoryLogo from "#/assets/projects/memory/memoryLogo.svg";
+import SustainLogo from "#/assets/projects/sustain/sustainLogo.png";
 import AntDesignIcon from "#/assets/skillcards/ant-design.svg";
 import CssModulesIcon from "#/assets/skillcards/css-modules.svg";
 import FigmaIcon from "#/assets/skillcards/figma.svg";
@@ -11,6 +11,22 @@ import ReduxIcon from "#/assets/skillcards/redux.svg";
 import TanStackIcon from "#/assets/skillcards/tanstack.svg";
 import TypeScriptIcon from "#/assets/skillcards/typescript.svg";
 import ViteIcon from "#/assets/skillcards/vite.svg";
+import SassIcon from '#/assets/skillcards/sass.svg';
+import JavaScripIcon from '#/assets/skillcards/javascript.svg';
+import DjangoIcon from '#/assets/skillcards/django.svg';
+import RTLIcon from '#/assets/skillcards/testing-library.svg';
+import DockerIcon from '#/assets/skillcards/docker.svg';
+import GitHubIcon from '#/assets/skillcards/github.svg';
+import VitestIcon from "#/assets/skillcards/vitest.svg";
+import GitLabIcon from "#/assets/skillcards/gitlab.svg";
+import CssIcon from "#/assets/skillcards/css.svg";
+import PlaywrightIcon from "#/assets/skillcards/playwright.svg";
+import CursorIcon from "#/assets/skillcards/cursor.svg";
+import ClaudeIcon from "#/assets/skillcards/claude.svg";
+import JestIcon from "#/assets/skillcards/jest.svg";
+import CypressIcon from "#/assets/skillcards/cypress.svg";
+import RollupIcon from "#/assets/skillcards/rollup.svg";
+import HuskyIcon from "#/assets/skillcards/husky.svg";
 
 export type SplashSection = {
 	title: string;
@@ -49,13 +65,30 @@ export const tagIcons: Record<string, string> = {
 	TypeScript: TypeScriptIcon,
 	"TanStack Query": TanStackIcon,
 	"TanStack Router": TanStackIcon,
+	"TanStack Virtualizer": TanStackIcon,
 	"React Aria": ReactAriaIcon,
 	Redux: ReduxIcon,
 	Vite: ViteIcon,
+	Vitest: VitestIcon,
 	Motion: FramerMotionIcon,
+	CSS: CssIcon,
 	"CSS Modules": CssModulesIcon,
 	"Ant Design": AntDesignIcon,
 	Figma: FigmaIcon,
+	Sass: SassIcon,
+	JavaScript: JavaScripIcon,
+	Django: DjangoIcon,
+	"React Testing Library": RTLIcon,
+	Jest: JestIcon,
+	Cypress: CypressIcon,
+	Playwright: PlaywrightIcon,
+	Rollup: RollupIcon,
+	Docker: DockerIcon,
+	GitHub: GitHubIcon,
+	GitLab: GitLabIcon,
+	Cursor: CursorIcon,
+	Claude: ClaudeIcon,
+	Husky: HuskyIcon
 };
 
 export const projectsStruct: ProjectStruct[] = [
@@ -64,21 +97,28 @@ export const projectsStruct: ProjectStruct[] = [
 		tags: [
 			"React",
 			"TypeScript",
+			"React Aria",
+			"Sass",
+			"CSS Modules",
 			"TanStack Query",
 			"TanStack Router",
-			"React Aria",
+			"TanStack Virtualizer",
 			"Redux",
+			"Vitest",
+			"Vite",
+			"Docker",
+			"GitLab"
 		],
 		logoPath: IrisLogo,
 	},
 	{
 		id: "memory",
-		tags: ["React", "TypeScript", "Vite", "Motion", "CSS Modules"],
+		tags: ["React", "TypeScript", "React Aria", "CSS", "CSS Modules", "TanStack Query", "TanStack Router", "Django", "Vitest", "Playwright", "Vite", "Docker", "Husky", "GitLab", "Cursor", "Claude"],
 		logoPath: MemoryLogo,
 	},
 	{
 		id: "sustain",
-		tags: ["React", "TypeScript", "Ant Design", "Figma", "Design System"],
+		tags: ["React", "JavaScript", "Ant Design", "Sass", "Redux", "Django", "React Testing Library", "Jest", "Cypress", "Vite", "Rollup", "Docker", "GitHub"],
 		logoPath: SustainLogo,
 	},
 ];

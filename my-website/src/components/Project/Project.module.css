@@ -78,8 +78,13 @@
 .panel {
 	padding: 24px;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	grid-template-columns: 2fr 1fr;
+	align-items: start;
 	gap: 44px;
+}
+
+.panelContent {
+	padding: 0 40px;
 }
 
 .description {
@@ -111,10 +116,11 @@
 }
 
 .tags {
+	grid-column: 1 / -1;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 8px;
-	margin-top: 24px;
+	padding: 0 40px 40px 40px;
 }
 
 .tag {
@@ -139,7 +145,7 @@
 .diveButtonContainer {
 	position: relative;
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: center;
 }
 
@@ -168,6 +174,8 @@
 	}
 
 	.panel {
+		grid-template-columns: 1fr;
+		gap: 24px;
 		padding-left: 0;
 	}
 }

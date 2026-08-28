@@ -15,6 +15,7 @@ import FramerMotionIcon from "#/assets/skillcards/framer-motion.svg";
 import GitIcon from "#/assets/skillcards/git.svg";
 import GitHubIcon from "#/assets/skillcards/github.svg";
 import GitlabIcon from "#/assets/skillcards/gitlab.svg";
+import HuskyIcon from "#/assets/skillcards/husky.svg";
 import GoogleStitchIcon from "#/assets/skillcards/google-stitch.svg";
 import InkscapeIcon from "#/assets/skillcards/inkscape.svg";
 import JavaIcon from "#/assets/skillcards/java.svg";
@@ -131,7 +132,7 @@ export const skillCategories: SkillCategory[] = [
 		skills: [
 			{ name: "Docker", icon: DockerIcon },
 			{ name: "GitLab CI/CD", icon: GitlabIcon },
-			{ name: "Husky", emoji: "🐶" },
+			{ name: "Husky", icon: HuskyIcon },
 		],
 	},
 	{
