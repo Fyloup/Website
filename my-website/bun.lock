@@ -11,10 +11,13 @@
         "@tanstack/react-router-devtools": "latest",
         "@tanstack/router-plugin": "^1.132.0",
         "clsx": "^2.1.1",
+        "i18next": "^26.4.0",
+        "i18next-browser-languagedetector": "^8.2.1",
         "lucide-react": "^0.545.0",
         "motion": "^12.42.2",
         "react": "^19.2.0",
         "react-dom": "^19.2.0",
+        "react-i18next": "^17.0.12",
         "tailwindcss": "^4.1.18",
       },
       "devDependencies": {
@@ -420,9 +423,15 @@
 
     "html-encoding-sniffer": ["html-encoding-sniffer@6.0.0", "", { "dependencies": { "@exodus/bytes": "^1.6.0" } }, "sha512-CV9TW3Y3f8/wT0BRFc1/KAVQ3TUHiXmaAb6VW9vtiMFf7SLoMd1PdAc4W3KFOFETBJUb90KatHqlsZMWV+R9Gg=="],
 
+    "html-parse-stringify": ["html-parse-stringify@4.0.1", "", {}, "sha512-0zHsZJrK7S3K2aucXWL6ycoYJ/iNtIcFHC/nYQgFklPtrv5LpJctIiSCroWZWeuoXvuyFdzp6KzjJQ+OT5MfFw=="],
+
     "http-proxy-agent": ["http-proxy-agent@7.0.2", "", { "dependencies": { "agent-base": "^7.1.0", "debug": "^4.3.4" } }, "sha512-T1gkAiYYDWYx3V5Bmyu7HcfcvL7mUrTWiM6yOfa3PIphViJ/gFPbvidQ+veqSOHci/PxBcDabeUNCzpOODJZig=="],
 
     "https-proxy-agent": ["https-proxy-agent@7.0.6", "", { "dependencies": { "agent-base": "^7.1.2", "debug": "4" } }, "sha512-vK9P5/iUfdl95AI+JVyUuIcVtd4ofvtrOr3HNtM2yxC9bnMbEdp3x01OhQNnjb8IJYi38VlTE3mBXwcfvywuSw=="],
+
+    "i18next": ["i18next@26.4.0", "", { "peerDependencies": { "typescript": "^5 || ^6 || ^7" }, "optionalPeers": ["typescript"] }, "sha512-rsmK5bFqsD1AetSFSIa43wtNR4WpvvH4p0tLEsTxkC7QTrfdFm06nbQ95bh8Og4wwaCnUEcm9DVYL2cgxitiQg=="],
+
+    "i18next-browser-languagedetector": ["i18next-browser-languagedetector@8.2.1", "", { "dependencies": { "@babel/runtime": "^7.23.2" } }, "sha512-bZg8+4bdmaOiApD7N7BPT9W8MLZG+nPTOFlLiJiT8uzKXFjhxw4v2ierCXOwB5sFDMtuA5G4kgYZ0AznZxQ/cw=="],
 
     "is-potential-custom-element-name": ["is-potential-custom-element-name@1.0.1", "", {}, "sha512-bCYeRA2rVibKZd+s2625gGnGF/t7DSqDs4dP7CrLA1m7jKWz6pps0LpYLJN8Q64HtmPKJ1hrN3nzPNKFEKOUiQ=="],
 
@@ -511,6 +520,8 @@
     "react": ["react@19.2.7", "", {}, "sha512-HNe9WslTbXmFK8o8cmwgAeJFSBvt1bPdHCVKtaaV+WlAN36mpT4hcRpwbf3fY56ar2oIXzsBpOAiIRHAdY0OlQ=="],
 
     "react-dom": ["react-dom@19.2.7", "", { "dependencies": { "scheduler": "^0.27.0" }, "peerDependencies": { "react": "^19.2.7" } }, "sha512-t0BRVXvbiE/o20Hfw669rLbMCDWtYZLvmJigy2f0MxsXF+71pxhR3xOkspmsO8h3ZlNzyibAmtCa3l4lYKk6gQ=="],
+
+    "react-i18next": ["react-i18next@17.0.12", "", { "dependencies": { "@babel/runtime": "^7.29.7", "html-parse-stringify": "^4.0.1", "use-sync-external-store": "^1.6.0" }, "peerDependencies": { "i18next": ">= 26.2.0", "react": ">= 16.8.0", "react-dom": "*", "react-native": "*", "typescript": "^5 || ^6 || ^7" }, "optionalPeers": ["react-dom", "react-native", "typescript"] }, "sha512-lFWPEGkxQ6RhusdUkysFBD58VHfSSzvHBzqMgN0SvfVpdQGfwtNkStTqdy08/sJd7s807qqutgx93fRpD0DJ3Q=="],
 
     "react-is": ["react-is@17.0.2", "", {}, "sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w=="],
 

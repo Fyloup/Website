@@ -1,12 +1,11 @@
-
 .item {
-    border-radius: 20px;
-    overflow: hidden;
+	border-radius: 20px;
+	overflow: hidden;
 }
 
 .row {
 	width: 100%;
-	background: white;
+	background: var(--dc-panel);
 	cursor: pointer;
 	text-align: left;
 	padding: 30px;
@@ -31,13 +30,13 @@
 	font-size: clamp(23px, 3vw, 34px);
 	letter-spacing: -0.015em;
 	line-height: 1.1;
-	color: #6c6c6c;
+	color: var(--dc-text);
 }
 
 .subtitle {
 	font-family: var(--dc-mono);
 	font-size: 12px;
-	color: #6c6c6c;
+	color: var(--dc-text-5);
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
 }
@@ -72,8 +71,7 @@
 }
 
 .panelWrap {
-    /* background-color: rgb(235, 243, 248); */
-	background-color: white;
+	background-color: var(--dc-panel);
 	overflow: hidden;
 }
 
@@ -87,7 +85,7 @@
 .description {
 	font-size: 16.5px;
 	line-height: 1.6;
-	color: #4d4d4d;
+	color: var(--dc-text-2);
 	margin: 0;
 	max-width: 46ch;
 }
@@ -129,20 +127,20 @@
 }
 
 .diveButtonContainer {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .splashShape {
-    position: fixed;
-    inset: 0;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    /* background-color: rgb(235, 248, 245); */
-    background-color: white;
-    content: '';
+	position: fixed;
+	inset: 0;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	/* background-color: rgb(235, 248, 245); */
+	background-color: white;
+	content: "";
 }
 
 @media (max-width: 720px) {
@@ -164,15 +162,13 @@
 	}
 }
 
-
-
 /* Specific styles */
 
 .meetIrisButton {
-    z-index: 1;
-    color: white;
-    background-color: rgb(1, 131, 252);
-    padding: 8px 12px;
-    border-radius: 8px;
-    cursor: pointer;
+	z-index: 1;
+	color: #ffffff;
+	background-color: var(--dc-accent-bright);
+	padding: 8px 12px;
+	border-radius: 8px;
+	cursor: pointer;
 }

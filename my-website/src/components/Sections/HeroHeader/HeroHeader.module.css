@@ -6,67 +6,6 @@
 	padding: 120px 32px 96px;
 }
 
-/* Floating decorative shapes, top-right. */
-.blobs {
-	position: absolute;
-	top: 60px;
-	right: 0;
-	width: 360px;
-	height: 360px;
-	pointer-events: none;
-	opacity: 0.9;
-	max-width: 50%;
-}
-
-.blobCircle,
-.blobPill,
-.blobRing,
-.blobSquare {
-	position: absolute;
-	display: block;
-}
-
-.blobCircle {
-	top: 0;
-	right: 120px;
-	width: 110px;
-	height: 110px;
-	border-radius: 50%;
-	background: var(--dc-accent);
-	opacity: 0.16;
-	animation: floatY 7s ease-in-out infinite;
-}
-
-.blobPill {
-	top: 34px;
-	right: 20px;
-	width: 82px;
-	height: 250px;
-	border-radius: 41px;
-	background: var(--dc-accent);
-	opacity: 0.22;
-}
-
-.blobRing {
-	top: 200px;
-	right: 150px;
-	width: 150px;
-	height: 70px;
-	border-radius: 35px;
-	border: 1.5px solid var(--dc-line-strong);
-}
-
-.blobSquare {
-	top: 150px;
-	right: 250px;
-	width: 54px;
-	height: 54px;
-	border-radius: 16px;
-	background: var(--dc-accent);
-	opacity: 0.3;
-	animation: floatY 9s ease-in-out infinite;
-}
-
 .grid {
 	position: relative;
 	z-index: 2;
@@ -171,7 +110,7 @@
 	padding: 12px 20px;
 	border-radius: 999px;
 	background: var(--dc-accent);
-	color: var(--dc-text);
+	color: #ffffff;
 	font-family: var(--dc-mono);
 	font-size: 13px;
 	letter-spacing: 0.02em;
@@ -181,7 +120,7 @@
 
 .cvButton:hover {
 	background: var(--dc-accent-bright);
-	color: var(--dc-bg);
+	color: #ffffff;
 }
 
 .badge {
@@ -193,7 +132,7 @@
 	gap: 10px;
 	margin-top: 40px;
 	padding: 9px 15px;
-	border: 1px solid rgba(255, 255, 255, 0.1);
+	border: 1px solid var(--dc-line-strong);
 	border-radius: 999px;
 	background: var(--dc-panel);
 	height: 44px;
@@ -215,31 +154,19 @@
 	color: var(--dc-text-3);
 }
 
-@keyframes floatY {
-	0%,
-	100% {
-		transform: translateY(0);
-	}
-	50% {
-		transform: translateY(-14px);
-	}
-}
-
 @keyframes pulseDot {
 	0% {
-		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.22);
+		box-shadow: 0 0 0 0 rgba(27, 79, 208, 0.35);
 	}
 	70% {
-		box-shadow: 0 0 0 7px rgba(255, 255, 255, 0);
+		box-shadow: 0 0 0 7px rgba(27, 79, 208, 0);
 	}
 	100% {
-		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+		box-shadow: 0 0 0 0 rgba(27, 79, 208, 0);
 	}
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.blobCircle,
-	.blobSquare,
 	.badgeDot {
 		animation: none;
 	}
@@ -248,10 +175,6 @@
 @media (max-width: 720px) {
 	.root {
 		padding: 88px 24px 64px;
-	}
-
-	.blobs {
-		display: none;
 	}
 
 	.grid {

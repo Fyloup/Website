@@ -36,7 +36,7 @@
 	align-items: center;
 	justify-content: center;
 	padding: 32px;
-	background: rgba(255, 255, 255, 0.03);
+	background: rgba(22, 24, 26, 0.04);
 	border-right: 1px solid var(--dc-line);
 }
 

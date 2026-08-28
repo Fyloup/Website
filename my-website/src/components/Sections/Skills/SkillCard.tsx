@@ -1,7 +1,5 @@
-import clsx from "clsx";
-
 import styles from "./SkillCard.module.css";
-import { masteryDescriptions, type Skill } from "./utils";
+import type { Skill } from "./utils";
 
 function getInitials(name: string): string {
 	const words = name.split(" ").filter(Boolean);
@@ -11,18 +9,17 @@ function getInitials(name: string): string {
 	return name.slice(0, 2).toUpperCase();
 }
 
-export function SkillCard({ name, mastery, description }: Skill) {
+export function SkillCard({ name, icon }: Skill) {
 	return (
-		<div className={clsx(styles.card, styles[mastery])}>
-			<div className={styles.logoCol}>
-				<span className={styles.monogram}>{getInitials(name)}</span>
-			</div>
-			<div className={styles.textCol}>
-				<span className={styles.name}>{name}</span>
-				<span className={styles.description}>
-					{description ?? masteryDescriptions[mastery]}
-				</span>
-			</div>
+		<div className={styles.card}>
+			<span className={styles.logo}>
+				{icon ? (
+					<img className={styles.icon} src={icon} alt="" />
+				) : (
+					<span className={styles.monogram}>{getInitials(name)}</span>
+				)}
+			</span>
+			<span className={styles.name}>{name}</span>
 		</div>
 	);
 }

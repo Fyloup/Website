@@ -1,0 +1,154 @@
+{
+	"nav": {
+		"work": "Projets",
+		"skills": "Compétences",
+		"education": "Formation",
+		"contact": "Contact"
+	},
+	"language": {
+		"label": "Langue",
+		"switchTo": "Passer en {{language}}",
+		"en": "EN",
+		"fr": "FR"
+	},
+	"hero": {
+		"title": "Développeur Web",
+		"intro": "Développeur frontend avec 5 ans d'expérience, je transforme des besoins complexes en interfaces simples et intuitives.",
+		"downloadCv": "Télécharger le CV",
+		"available": "Disponible pour une mission"
+	},
+	"projects": {
+		"kicker": "Projets",
+		"items": {
+			"iris": {
+				"name": "Iris",
+				"subtitle": "Plateforme d'IA interne",
+				"role": "Full-stack",
+				"period": "2022 — Aujourd'hui",
+				"description": "L'application web qui héberge le produit d'IA interne d'Egis, déployée auprès de 18 000 collaborateurs avec 5 000 utilisateurs actifs par jour. Conception et développement des fonctionnalités de bout en bout.",
+				"highlights": [
+					"Systèmes de chat, de classement et de gamification livrés de bout en bout",
+					"Écrans de chargement personnalisés à partir du logo et notifications de badges animées",
+					"Défis liés aux badges stimulant l'engagement à l'échelle de l'entreprise"
+				],
+				"viewButtonText": "Découvrir Iris",
+				"splashSections": [
+					{
+						"title": "Contexte",
+						"body": "Iris est l'assistant d'IA interne du groupe Egis, conçu pour accompagner les collaborateurs dans leurs cas d'usage métier avec une interface qui s'adapte dynamiquement au contexte d'utilisation."
+					},
+					{
+						"title": "Rôle",
+						"body": "Développeur UI/UX frontend au sein d'une équipe de 16 personnes. Responsable de la conception et de la réalisation de l'ensemble de l'interface, avec une attention particulière portée au module de chat. Stack : React, SASS, Django, Docker, Python, JavaScript, CSS Modules."
+					},
+					{
+						"title": "Le chat",
+						"body": "Streaming en temps réel avec une interface qui s'adapte au cas d'usage.",
+						"bullets": [
+							"Flows : déclencher des prompts préconfigurés avec « @ » dans le champ de saisie",
+							"Prise en charge multi-format : texte, images, code et documents"
+						]
+					},
+					{
+						"title": "Gamification",
+						"body": "Conception de systèmes de défis avec badges, un classement et un profil intégrant progression et XP."
+					},
+					{
+						"title": "Résultats",
+						"body": "5 000 utilisateurs actifs par jour, déployé auprès de 18 000 collaborateurs dans 70 pays. Lauréat des FCI Awards, catégorie grande entreprise — « Étincelle d'Or »."
+					}
+				]
+			},
+			"memory": {
+				"name": "Memory",
+				"subtitle": "Outil de centralisation des projets",
+				"role": "En solo — conception & réalisation",
+				"period": "2024",
+				"description": "Un produit personnel que j'ai conçu et développé de bout en bout — du concept et du design d'interface jusqu'à l'implémentation des composants.",
+				"highlights": [
+					"Concept, design d'interface et implémentation, réalisés en solo",
+					"Un terrain de jeu pour l'architecture frontend et l'animation",
+					"Un design system solide et centré sur l'utilisateur"
+				],
+				"viewButtonText": "Découvrir Memory",
+				"splashSections": [
+					{
+						"title": "Contexte",
+						"body": "Un outil interne centralisant les projets d'ingénierie du groupe."
+					},
+					{
+						"title": "Rôle",
+						"body": "Développeur full-stack en charge d'un large périmètre frontend, avec une intégration des composants frontend jusqu'au backend. Stack : React, TypeScript, Python, Django, CSS Modules."
+					},
+					{
+						"title": "Défi",
+						"body": "Gérer de grands volumes de données avec versionnage des projets et des tableaux de plusieurs milliers de lignes — sans dégrader les performances ni l'expérience utilisateur."
+					},
+					{
+						"title": "Résultats",
+						"body": "Déployé aux côtés d'Iris. Permet aux ingénieurs de retrouver au même endroit toutes les données de l'entreprise dont ils ont besoin — un gain de temps et d'organisation majeur."
+					}
+				]
+			},
+			"sustain": {
+				"name": "SustainEcho",
+				"subtitle": "Plateforme de développement durable",
+				"role": "Full-stack",
+				"period": "2021 — 2022",
+				"description": "Une plateforme pour une construction de bâtiments plus écologique. Livraison de composants et de systèmes de bout en bout, avec un fort accent sur le design centré utilisateur.",
+				"highlights": [
+					"Tableau de bord, stepper et tableau de données conçus de zéro",
+					"Filtrage, recherche et tri sur de grands jeux de données",
+					"Design system sous Figma + refonte complète de l'identité visuelle"
+				],
+				"viewButtonText": "Découvrir SustainEcho",
+				"splashSections": [
+					{
+						"title": "Contexte",
+						"body": "SustainEcho est une plateforme d'optimisation carbone pour le secteur de la construction — une startup B2B qui aide les entreprises du bâtiment à trouver des matériaux alternatifs plus éco-efficients tout en fournissant des bilans carbone."
+					},
+					{
+						"title": "Rôle",
+						"body": "Développeur UI/UX frontend, en dernière année à Epitech, au sein d'une équipe d'une dizaine de personnes. Pilotage et refonte complète de l'interface et création d'un design system complet. Développement de composants de zéro (tableaux, tableaux de bord). Stack : React, JavaScript, CSS, Python, Django."
+					},
+					{
+						"title": "Défi",
+						"body": "Premier projet d'envergure sans expérience professionnelle préalable, en rejoignant un projet déjà en cours. Montée en compétences rapide dans un environnement de startup au rythme soutenu."
+					},
+					{
+						"title": "Résultats",
+						"body": "Racheté par le groupe Egis au bout d'un an — aujourd'hui commercialisé sous le nom d'Emersus."
+					}
+				]
+			}
+		}
+	},
+	"skills": {
+		"kicker": "Stack & Compétences",
+		"categories": {
+			"Frontend": "Frontend",
+			"Frontend libraries": "Bibliothèques frontend",
+			"Backend": "Backend",
+			"Testing": "Tests",
+			"Infra": "Infra",
+			"Tools": "Outils",
+			"AI Tools": "Outils IA",
+			"Methodologies": "Méthodologies",
+			"Languages": "Langages"
+		}
+	},
+	"education": {
+		"kicker": "Formation",
+		"period": "2017 — 2022 · 5 ans",
+		"school": "Epitech",
+		"diploma": "Master en informatique",
+		"description": "Dont une quatrième année à l'étranger à l'UQAC (Université du Québec à Chicoutimi), Québec — cours de Java, d'IA et d'anglais."
+	},
+	"contact": {
+		"kicker": "Contact",
+		"linkedin": "LinkedIn",
+		"github": "GitHub",
+		"email": "E-mail",
+		"downloadCv": "Télécharger le CV"
+	}
+}

@@ -92,7 +92,7 @@
 	padding: 12px 20px;
 	border-radius: 999px;
 	background: var(--dc-accent);
-	color: var(--dc-text);
+	color: #ffffff;
 	font-family: var(--dc-mono);
 	font-size: 13px;
 	letter-spacing: 0.02em;
@@ -102,7 +102,7 @@
 
 .cvButton:hover {
 	background: var(--dc-accent-bright);
-	color: var(--dc-bg);
+	color: #ffffff;
 }
 
 @media (max-width: 720px) {

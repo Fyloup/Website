@@ -1,7 +1,7 @@
 import { useRef, type ReactNode } from "react"
 import styles from './PokeSkillCard.module.css'
 import Point from '../../assets/Point.svg'
-import BackendType from '../../assets/skillcards/types/backendType.png'
+import BackendType from '../../assets/skillcards/backendType.png'
 
 import { motion, useMotionValue, useSpring, useTransform } from 'motion/react'
 import clsx from "clsx"

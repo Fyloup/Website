@@ -1,12 +1,15 @@
 import { GraduationCap } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 import styles from "./Education.module.css";
 
 export function Education() {
+	const { t } = useTranslation();
+
 	return (
 		<section id="education" className={styles.section}>
 			<div className={styles.header}>
-				<span className={styles.kicker}>Education</span>
+				<span className={styles.kicker}>{t("education.kicker")}</span>
 			</div>
 
 			<div className={styles.card}>
@@ -20,15 +23,10 @@ export function Education() {
 					</div>
 				</div>
 				<div className={styles.textCol}>
-					<span className={styles.period}>2017 — 2022 · 5 years</span>
-					<h3 className={styles.school}>Epitech</h3>
-					<span className={styles.diploma}>
-						Master's Degree in Computer Science
-					</span>
-					<p className={styles.description}>
-						Including a fourth year abroad at UQAC (Université du Québec à
-						Chicoutimi), Quebec — coursework in Java, AI and English.
-					</p>
+					<span className={styles.period}>{t("education.period")}</span>
+					<h3 className={styles.school}>{t("education.school")}</h3>
+					<span className={styles.diploma}>{t("education.diploma")}</span>
+					<p className={styles.description}>{t("education.description")}</p>
 				</div>
 			</div>
 		</section>

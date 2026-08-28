@@ -1,5 +1,6 @@
-import { motion } from "motion/react";
 import { Download, Github, Linkedin, Mail, User } from "lucide-react";
+import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
 
 import styles from "./HeroHeader.module.css";
 
@@ -11,21 +12,20 @@ const rise = {
 const EMAIL = "sirvente.philippe@gmail.com";
 
 const links = [
-	{ href: "https://www.linkedin.com/in/philippe-smc/", label: "LinkedIn", icon: Linkedin },
+	{
+		href: "https://www.linkedin.com/in/philippe-smc/",
+		label: "LinkedIn",
+		icon: Linkedin,
+	},
 	{ href: "https://github.com/Fyloup", label: "GitHub", icon: Github },
 	{ href: `mailto:${EMAIL}`, label: "Email", icon: Mail },
 ];
 
 export function HeroHeader() {
+	const { t } = useTranslation();
+
 	return (
 		<section id="top" className={styles.root}>
-			<div className={styles.blobs} aria-hidden="true">
-				<span className={styles.blobCircle} />
-				<span className={styles.blobPill} />
-				<span className={styles.blobRing} />
-				<span className={styles.blobSquare} />
-			</div>
-
 			<motion.div
 				className={styles.grid}
 				initial="hidden"
@@ -43,11 +43,8 @@ export function HeroHeader() {
 					transition={{ duration: 0.6, ease: "easeOut" }}
 				>
 					<h1 className={styles.name}>Philippe Sirvente-Maroto</h1>
-					<p className={styles.title}>Web Developer</p>
-					<p className={styles.intro}>
-						Frontend developer with 5 years of experience, I turn complex
-						requirements into simple, intuitive interfaces.
-					</p>
+					<p className={styles.title}>{t("hero.title")}</p>
+					<p className={styles.intro}>{t("hero.intro")}</p>
 				</motion.div>
 
 				<motion.div
@@ -56,7 +53,11 @@ export function HeroHeader() {
 					transition={{ type: "spring", stiffness: 110, damping: 18 }}
 				>
 					<div className={styles.avatar}>
-						<User className={styles.avatarIcon} strokeWidth={1.25} aria-hidden="true" />
+						<User
+							className={styles.avatarIcon}
+							strokeWidth={1.25}
+							aria-hidden="true"
+						/>
 					</div>
 				</motion.div>
 
@@ -79,7 +80,7 @@ export function HeroHeader() {
 					))}
 					<a href="/cv.pdf" download className={styles.cvButton}>
 						<Download size={16} strokeWidth={1.75} />
-						Download CV
+						{t("hero.downloadCv")}
 					</a>
 				</motion.div>
 
@@ -89,7 +90,7 @@ export function HeroHeader() {
 					transition={{ duration: 0.5, ease: "easeOut" }}
 				>
 					<span className={styles.badgeDot} />
-					<span className={styles.badgeLabel}>Available for work</span>
+					<span className={styles.badgeLabel}>{t("hero.available")}</span>
 				</motion.div>
 			</motion.div>
 		</section>

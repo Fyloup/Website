@@ -4,34 +4,34 @@
 
 :root {
   /* Surfaces */
-  --dc-bg: #16171d;
-  --dc-panel: #1e2029;
+  --dc-bg: #e6e8e6;
+  --dc-panel: #ffffff;
 
   /* Accent */
 
-  --accent: #2A9D8F;
+  --accent: #2462f2;
 
-  /* Text ramp (bright -> faint) */
-  --dc-text: #ececf1;
-  --dc-text-2: #b4b4be;
-  --dc-text-3: #9a9aa6;
-  --dc-text-4: #8b8b98;
-  --dc-text-5: #6e6e7c;
-  --dc-text-6: #5a5a68;
+  /* Text ramp (strong -> faint): near-black on light grey */
+  --dc-text: #16181a;
+  --dc-text-2: #33373b;
+  --dc-text-3: #4c5157;
+  --dc-text-4: #6b7076;
+  --dc-text-5: #8a8f95;
+  --dc-text-6: #a6abb0;
 
   /* Lines */
-  --dc-line: rgba(255, 255, 255, 0.09);
-  --dc-line-strong: rgba(255, 255, 255, 0.12);
+  --dc-line: rgba(22, 24, 26, 0.12);
+  --dc-line-strong: rgba(22, 24, 26, 0.2);
 
-  /* Accent (base + lightened variants from the design's lighten() helper) */
-  --dc-accent: #2c4fb8;
-  --dc-accent-bright: #8b9ed8;
-  --dc-accent-glow: rgba(65, 97, 191, 0.45);
-  --dc-star: #f6a623;
+  /* Accent: blue base + deeper-blue emphasis */
+  --dc-accent: #2462f2;
+  --dc-accent-bright: #1b4fd0;
+  --dc-accent-glow: rgba(36, 98, 242, 0.4);
+  --dc-star: #2462f2;
 
-  /* Skill mastery ramp: electric blue (mastered) -> white (basic) -> transparent (neutral) */
-  --dc-mastery-mastered: #2f8dff;
-  --dc-mastery-basic: #ffffff;
+  /* Skill mastery ramp (legacy tokens) */
+  --dc-mastery-mastered: #2462f2;
+  --dc-mastery-basic: #16181a;
 
   /* Type families */
   --dc-display: "Space Grotesk", system-ui, sans-serif;
@@ -84,8 +84,8 @@ body {
 }
 
 ::selection {
-  background: #ececf1;
-  color: #16171d;
+  background: #2462f2;
+  color: #ffffff;
 }
 
 #app {

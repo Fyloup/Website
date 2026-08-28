@@ -1,20 +1,25 @@
 import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
 
 import { SkillCard } from "./SkillCard";
 import styles from "./Skills.module.css";
 import { skillCategories } from "./utils";
 
 export function Skills() {
+	const { t } = useTranslation();
+
 	return (
 		<section id="skills" className={styles.section}>
 			<div className={styles.header}>
-				<span className={styles.kicker}>Stack &amp; Skills</span>
+				<span className={styles.kicker}>{t("skills.kicker")}</span>
 			</div>
 
 			<div className={styles.categories}>
 				{skillCategories.map((category) => (
 					<div key={category.title} className={styles.category}>
-						<span className={styles.categoryTitle}>{category.title}</span>
+						<span className={styles.categoryTitle}>
+							{t(`skills.categories.${category.title}`, category.title)}
+						</span>
 
 						<motion.div
 							className={styles.grid}
