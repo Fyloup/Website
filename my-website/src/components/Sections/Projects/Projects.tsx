@@ -23,8 +23,8 @@ export function Projects() {
 					const project: ProjectEntry = {
 						...struct,
 						name: t(`${base}.name`),
-						subtitle: t(`${base}.subtitle`),
 						role: t(`${base}.role`),
+						company: t(`${base}.company`),
 						period: t(`${base}.period`),
 						description: t(`${base}.description`),
 						highlights: t(`${base}.highlights`, {

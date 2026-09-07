@@ -23,8 +23,10 @@ export function Education() {
 					</div>
 				</div>
 				<div className={styles.textCol}>
-					<span className={styles.period}>{t("education.period")}</span>
-					<h3 className={styles.school}>{t("education.school")}</h3>
+					<div className={styles.schoolRow}>
+						<h3 className={styles.school}>{t("education.school")}</h3>
+						<span className={styles.period}>{t("education.period")}</span>
+					</div>
 					<span className={styles.diploma}>{t("education.diploma")}</span>
 					<p className={styles.description}>{t("education.description")}</p>
 				</div>

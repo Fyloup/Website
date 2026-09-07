@@ -1,12 +1,11 @@
 .item {
 	border-radius: 20px;
 	overflow: hidden;
+	background: var(--dc-panel);
 }
 
 .row {
 	width: 100%;
-	background: var(--dc-panel);
-	cursor: pointer;
 	text-align: left;
 	padding: 30px;
 	display: grid;
@@ -40,6 +39,7 @@
 }
 
 .rowMeta {
+	position: relative;
 	display: flex;
 	gap: 22px;
 	align-items: center;
@@ -53,36 +53,15 @@
 	letter-spacing: 0.04em;
 }
 
-.toggle {
-	display: inline-flex;
-	width: 20px;
-	justify-content: center;
-	font-family: var(--dc-display);
-	font-size: 24px;
-	line-height: 1;
-	color: var(--dc-text-6);
-	transition: color 0.25s ease;
-}
-
-.toggleActive {
-	color: var(--dc-accent-bright);
-}
-
-.panelWrap {
-	background-color: var(--dc-panel);
-	overflow: hidden;
-}
-
 .panel {
-	padding: 24px;
-	display: grid;
-	grid-template-columns: 2fr 1fr;
-	align-items: start;
-	gap: 44px;
+	display: flex;
+	flex-direction: column;
+	gap: 22px;
+	padding: 0 40px 40px;
 }
 
 .panelContent {
-	padding: 0 0 0 40px;
+	padding: 0;
 }
 
 .description {
@@ -114,11 +93,9 @@
 }
 
 .tags {
-	grid-column: 1 / -1;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 8px;
-	padding: 0 40px 40px 40px;
 }
 
 .tag {
@@ -140,20 +117,17 @@
 	object-fit: contain;
 }
 
-.diveButtonContainer {
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100%;
-}
-
 .splashShape {
 	position: fixed;
 	inset: 0;
+	/* Above every in-page element (navbar sits at z-index 40) but below the
+	   splash screen itself (z-index 100), so the expanded disc masks the page
+	   during the transition and the splash content lands on top of it. */
+	z-index: 90;
 	transform: translate(-50%, -50%);
 	border-radius: 50%;
-	/* background-color: rgb(235, 248, 245); */
+	/* Fallback; the active project's accent colour is applied inline so the
+	   expanding disc matches the "Discover" button that triggered it. */
 	background-color: white;
 	content: "";
 }
@@ -173,19 +147,30 @@
 	}
 
 	.panel {
-		grid-template-columns: 1fr;
-		gap: 24px;
-		padding-left: 0;
+		gap: 18px;
+		padding: 0 24px 32px;
 	}
 }
 
 /* Specific styles */
 
 .meetIrisButton {
-	z-index: 1;
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
 	color: #ffffff;
 	background-color: var(--dc-accent-bright);
-	padding: 8px 12px;
+	padding: 8px 12px 8px 16px;
 	border-radius: 8px;
 	cursor: pointer;
+}
+
+.meetIrisButtonIcon {
+	font-size: 18px;
+	transition: transform 0.2s ease;
+}
+
+.meetIrisButton:hover .meetIrisButtonIcon {
+	transform: translateX(3px);
 }

@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import { AnimatePresence, motion, useMotionValue } from "motion/react";
 import { useRef, useState } from "react";
 import { createPortal } from "react-dom";
@@ -13,7 +12,6 @@ type ProjectProps = {
 export function Project({ data }: ProjectProps) {
 	const diveButtonRef = useRef<HTMLButtonElement>(null);
 
-	const [isOverviewOpen, setIsOverviewOpen] = useState(false);
 	const [hasClickedViewButton, setHasClickedViewButton] = useState(false);
 	const [isSplashScreenOpen, setIsSplashScreenOpen] = useState(false);
 	const [isSplashScreenContentOpen, setIsSplashScreenContentOpen] =
@@ -26,11 +24,13 @@ export function Project({ data }: ProjectProps) {
 
 	const {
 		name,
-		subtitle,
+		role,
+		company,
 		description,
 		highlights,
 		tags,
 		logoPath,
+		accent,
 		viewButtonText,
 		splashSections,
 	} = data;
@@ -72,133 +72,140 @@ export function Project({ data }: ProjectProps) {
 	return (
 		<div key={name} className={styles.item}>
 			{/* Tile */}
-			<button
-				type="button"
-				className={styles.row}
-				aria-expanded={isOverviewOpen}
-				onClick={() => {
-					setIsOverviewOpen(!isOverviewOpen);
-				}}
-			>
-				<span
-					className={clsx(styles.number, isOverviewOpen && styles.numberActive)}
-				>
+			<div className={styles.row}>
+				<span className={styles.number}>
 					<img src={logoPath} alt="logo-path" height={56} width={56} />
 				</span>
 				<span className={styles.rowMain}>
 					<span className={styles.name}>{name}</span>
-					<span className={styles.subtitle}>{subtitle}</span>
-				</span>
-				<span className={styles.rowMeta}>
-					<span
-						className={clsx(
-							styles.toggle,
-							isOverviewOpen && styles.toggleActive,
-						)}
-					>
-						{isOverviewOpen ? "×" : "+"}
+					<span className={styles.subtitle}>
+						{role} - {company}
 					</span>
 				</span>
-			</button>
+				<span className={styles.rowMeta}>
+					{createPortal(
+						<AnimatePresence>
+							{hasClickedViewButton && (
+								<motion.div
+									key="disc-accent"
+									className={styles.splashShape}
+									style={{
+										top: splashShapeX.get(),
+										left: splashShapeY.get(),
+										backgroundColor: accent,
+									}}
+									initial={{
+										width: 0,
+										height: 0,
+									}}
+									animate={{
+										width: 10_000,
+										height: 10_000,
+									}}
+									exit={{
+										width: 0,
+										height: 0,
+										transition: { duration: 1.1, delay: 0.2 },
+									}}
+									transition={{ duration: 1.9 }}
+								/>
+							)}
+							{hasClickedViewButton && (
+								<motion.div
+									key="disc-white"
+									className={styles.splashShape}
+									style={{
+										top: splashShapeX.get(),
+										left: splashShapeY.get(),
+										backgroundColor: "#fff",
+									}}
+									initial={{
+										width: 0,
+										height: 0,
+									}}
+									animate={{
+										width: 10_000,
+										height: 10_000,
+									}}
+									exit={{
+										width: 0,
+										height: 0,
+										transition: { duration: 1.1 },
+									}}
+									transition={{ duration: 1.9, delay: 0.25 }}
+									onAnimationComplete={handleOnAnimationComplete}
+								/>
+							)}
+						</AnimatePresence>,
+						document.body,
+					)}
+					<button
+						type="button"
+						className={styles.meetIrisButton}
+						style={{
+							backgroundColor: accent,
+						}}
+						ref={diveButtonRef}
+						onClick={() => {
+							handleViewButtonClick();
+						}}
+					>
+						{viewButtonText}
+						<span
+							className={`material-symbols-rounded ${styles.meetIrisButtonIcon}`}
+							aria-hidden="true"
+						>
+							arrow_forward
+						</span>
+					</button>
+				</span>
+			</div>
 
 			{/* Overview content */}
-			<AnimatePresence
-				initial={false}
-				onExitComplete={() => {
-					console.log("exit");
-				}}
-			>
-				{isOverviewOpen && (
-					<motion.div
-						className={styles.panelWrap}
-						initial={{ height: 0, opacity: 1 }}
-						animate={{ height: "auto", opacity: 1 }}
-						exit={{ height: 0, opacity: 1 }}
-						transition={{ duration: 0.4, ease: [0.2, 0.7, 0.2, 1] }}
-					>
-						<div className={styles.panel}>
-							<div className={styles.panelContent}>
-								<p className={styles.description}>{description}</p>
-								<ul className={styles.highlights}>
-									{highlights.map((highlight) => (
-										<li key={highlight} className={styles.highlight}>
-											<span className={styles.dash}>—</span>
-											{highlight}
-										</li>
-									))}
-								</ul>
-							</div>
-							<div className={styles.diveButtonContainer}>
-								{createPortal(
-									<AnimatePresence>
-										{hasClickedViewButton && (
-											<motion.div
-												className={styles.splashShape}
-												style={{
-													top: splashShapeX.get(),
-													left: splashShapeY.get(),
-												}}
-												initial={{
-													width: 0,
-													height: 0,
-												}}
-												animate={{
-													width: 5_000,
-													height: 5_000,
-												}}
-												exit={{
-													width: 0,
-													height: 0,
-												}}
-												transition={{ duration: 0.7 }}
-												onAnimationComplete={handleOnAnimationComplete}
-											/>
-										)}
-									</AnimatePresence>,
-									document.body,
-								)}
-								<button
-									type="button"
-									className={styles.meetIrisButton}
-									ref={diveButtonRef}
-									onClick={() => {
-										handleViewButtonClick();
-									}}
-								>
-									{viewButtonText}
-								</button>
-							</div>
-							<div className={styles.tags}>
-								{tags.map((tag) => {
-									const icon = tagIcons[tag];
+			<div className={styles.panel}>
+				<div className={styles.panelContent}>
+					<p className={styles.description}>{description}</p>
+					<ul className={styles.highlights}>
+						{highlights.map((highlight) => (
+							<li key={highlight} className={styles.highlight}>
+								<span className={styles.dash}>—</span>
+								{highlight}
+							</li>
+						))}
+					</ul>
+				</div>
+				<div className={styles.tags}>
+					{tags.map((tag) => {
+						const icon = tagIcons[tag];
 
-									return (
-										<span key={tag} className={styles.tag} title={tag}>
-											{icon && (
-												<img
-													src={icon}
-													alt=""
-													width={16}
-													height={16}
-													aria-hidden="true"
-												/>
-											)}
-											{tag}
-										</span>
-									);
-								})}
-							</div>
-						</div>
-						<SplashScreen
-							backgroundColor={"#fff"}
-							isOpen={isSplashScreenOpen}
-							isReady={isSplashScreenContentOpen}
-							sections={splashSections}
-							onLeave={handleOnSplashScreenLeave}
-						/>
-					</motion.div>
-				)}
-			</AnimatePresence>
+						return (
+							<span key={tag} className={styles.tag} title={tag}>
+								{icon && (
+									<img
+										src={icon}
+										alt=""
+										width={16}
+										height={16}
+										aria-hidden="true"
+									/>
+								)}
+								{tag}
+							</span>
+						);
+					})}
+				</div>
+			</div>
+
+			<SplashScreen
+				backgroundColor={"#fff"}
+				isOpen={isSplashScreenOpen}
+				isReady={isSplashScreenContentOpen}
+				sections={splashSections}
+				logoPath={logoPath}
+				accent={accent}
+				stack={tags}
+				onLeave={handleOnSplashScreenLeave}
+			/>
 		</div>
 	);
 }

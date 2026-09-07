@@ -21,8 +21,8 @@
 		"items": {
 			"iris": {
 				"name": "Iris",
-				"subtitle": "Plateforme d'IA interne",
-				"role": "Full-stack",
+				"role": "Frontend & Product Designer",
+				"company": "Egis Group",
 				"period": "2022 — Aujourd'hui",
 				"description": "L'application web qui héberge le produit d'IA interne d'Egis, déployée auprès de 18 000 collaborateurs avec 5 000 utilisateurs actifs par jour. Conception et développement des fonctionnalités de bout en bout.",
 				"highlights": [
@@ -34,34 +34,61 @@
 				"splashSections": [
 					{
 						"title": "Contexte",
-						"body": "Iris est l'assistant d'IA interne du groupe Egis, conçu pour accompagner les collaborateurs dans leurs cas d'usage métier avec une interface qui s'adapte dynamiquement au contexte d'utilisation."
+						"body": "Iris est l'assistant d'IA interne du groupe Egis. Il offre à 18 000 collaborateurs dans 70 pays une surface conversationnelle unique pour leur travail quotidien — rédaction, synthèse, recherche dans la connaissance interne — avec une interface qui se réorganise autour de chaque cas d'usage plutôt que d'imposer un chat générique à tout le monde."
 					},
 					{
-						"title": "Rôle",
-						"body": "Développeur UI/UX frontend au sein d'une équipe de 16 personnes. Responsable de la conception et de la réalisation de l'ensemble de l'interface, avec une attention particulière portée au module de chat. Stack : React, SASS, Django, Docker, Python, JavaScript, CSS Modules."
-					},
-					{
-						"title": "Le chat",
-						"body": "Streaming en temps réel avec une interface qui s'adapte au cas d'usage.",
+						"title": "Problème",
+						"body": "Un chatbot généraliste ne résiste pas au contact d'une grande entreprise. Il fallait des points d'entrée spécifiques aux métiers, une gestion sûre des documents confidentiels et des réponses qui streament assez vite pour sembler vivantes — dans un produit que des collaborateurs non techniques rouvriraient une deuxième fois.",
 						"bullets": [
-							"Flows : déclencher des prompts préconfigurés avec « @ » dans le champ de saisie",
-							"Prise en charge multi-format : texte, images, code et documents"
+							"L'adoption devait être attirée, pas imposée — l'interface devait mériter d'être réutilisée",
+							"Le contenu confidentiel interdisait tout raccourci sur la gestion des documents et des droits",
+							"La latence perçue comptait autant que la vitesse brute du modèle"
 						]
 					},
 					{
-						"title": "Gamification",
-						"body": "Conception de systèmes de défis avec badges, un classement et un profil intégrant progression et XP."
+						"title": "Rôle",
+						"body": "Développeur UI/UX frontend dans une équipe de 16, propriétaire de l'ensemble de l'interface de bout en bout et référent du module de chat en particulier — du design d'interaction jusqu'aux composants React livrés.",
+						"bullets": [
+							"Périmètre : tout le frontend, avec l'expérience de chat comme responsabilité principale",
+							"Stack : React, TypeScript, Redux, TanStack Query / Router / Virtualizer, React Aria, Sass, CSS Modules, Vite, Vitest, Docker, GitLab",
+							"Points de contact backend en Django / Python pour les endpoints alimentant l'UI"
+						]
 					},
 					{
-						"title": "Résultats",
-						"body": "5 000 utilisateurs actifs par jour, déployé auprès de 18 000 collaborateurs dans 70 pays. Lauréat des FCI Awards, catégorie grande entreprise — « Étincelle d'Or »."
+						"title": "Réalisation",
+						"body": "Livraison de l'expérience conversationnelle centrale et des systèmes qui font revenir les utilisateurs.",
+						"bullets": [
+							"Streaming des tokens en temps réel avec une interface qui s'adapte par cas d'usage",
+							"Flows : taper « @ » dans le champ de saisie pour déclencher des prompts préconfigurés et paramétrés",
+							"Prise en charge multi-format dans un même fil — texte, images, code, documents",
+							"Couche de gamification : défis à badges, classement à l'échelle de l'entreprise, profil avec XP",
+							"Écrans de chargement personnalisés à partir du logo et notifications de badges animées"
+						]
+					},
+					{
+						"title": "Décisions",
+						"body": "Les choix qui déterminent la montée en charge et l'évolution du frontend.",
+						"bullets": [
+							"Virtualisation de la liste de messages pour que les longues conversations restent fluides au lieu de se dégrader en grandissant",
+							"State serveur dans TanStack Query et seulement le state UI réellement global dans Redux, pour éviter un store monolithique",
+							"Flows construits comme de la configuration pilotée par la donnée, pour onboarder de nouvelles équipes sans livraison frontend",
+							"Le streaming traité comme un état d'UI à part entière — skeletons, rendu partiel, annulation — pas un ajout après coup"
+						]
+					},
+					{
+						"title": "Impact",
+						"body": "5 000 utilisateurs actifs par jour sur un déploiement de 18 000 collaborateurs dans 70 pays.",
+						"bullets": [
+							"Lauréat des FCI Awards (catégorie grande entreprise) — « Étincelle d'Or »",
+							"La gamification a mesurablement augmenté l'engagement récurrent à l'échelle de l'entreprise"
+						]
 					}
 				]
 			},
 			"memory": {
 				"name": "Memory",
-				"subtitle": "Outil de centralisation des projets",
-				"role": "En solo — conception & réalisation",
+				"role": "Fullstack",
+				"company": "Egis Group",
 				"period": "2024",
 				"description": "Un produit personnel que j'ai conçu et développé de bout en bout — du concept et du design d'interface jusqu'à l'implémentation des composants.",
 				"highlights": [
@@ -73,26 +100,60 @@
 				"splashSections": [
 					{
 						"title": "Contexte",
-						"body": "Un outil interne centralisant les projets d'ingénierie du groupe."
+						"body": "Memory est un outil interne qui centralise les projets d'ingénierie du groupe — un endroit unique où tout ingénieur retrouve les données de projet de l'entreprise, versionnées dans le temps, au lieu de les chercher dans des systèmes éparpillés. Conçu et développé de bout en bout comme un produit personnel : concept, interface, composants."
+					},
+					{
+						"title": "Problème",
+						"body": "La valeur de l'outil grandit avec le volume de données qu'il contient — c'est aussi ce qui menace de le casser. Aucun de ces volumes ne doit faire saccader le défilement ni ralentir la recherche, et l'UI doit rester assez lisible pour que les ingénieurs lui fassent confiance comme source de vérité.",
+						"bullets": [
+							"Des tableaux de plusieurs milliers de lignes qui doivent quand même filtrer, trier et rechercher instantanément",
+							"Le versionnage des projets sans noyer l'UI sous l'historique",
+							"Une seule personne pour le design et l'implémentation — cela devait rester simple à maintenir en solo"
+						]
 					},
 					{
 						"title": "Rôle",
-						"body": "Développeur full-stack en charge d'un large périmètre frontend, avec une intégration des composants frontend jusqu'au backend. Stack : React, TypeScript, Python, Django, CSS Modules."
+						"body": "Développeur full-stack en solo : du concept et du design d'interface jusqu'aux composants frontend et à l'intégration backend derrière eux.",
+						"bullets": [
+							"Périmètre : de bout en bout — design system, composants, couche de données",
+							"Stack : React, TypeScript, TanStack Query / Router, React Aria, CSS Modules, Django / Python, Vitest, Playwright, Vite, Husky, GitLab",
+							"A aussi servi de terrain de jeu pour l'architecture frontend et l'animation"
+						]
 					},
 					{
-						"title": "Défi",
-						"body": "Gérer de grands volumes de données avec versionnage des projets et des tableaux de plusieurs milliers de lignes — sans dégrader les performances ni l'expérience utilisateur."
+						"title": "Réalisation",
+						"body": "Un outil focalisé, construit autour d'une seule tâche : retrouver vite les données de projet.",
+						"bullets": [
+							"Tableaux de données virtualisés gérant des milliers de lignes avec filtre, tri et recherche côté client",
+							"Historique des versions de projet exposé sans encombrer la vue principale",
+							"Un design system solide et centré sur l'utilisateur qui pilote chaque composant",
+							"Animation et micro-interaction traitées comme partie de l'expérience centrale, pas comme de la décoration"
+						]
 					},
 					{
-						"title": "Résultats",
-						"body": "Déployé aux côtés d'Iris. Permet aux ingénieurs de retrouver au même endroit toutes les données de l'entreprise dont ils ont besoin — un gain de temps et d'organisation majeur."
+						"title": "Décisions",
+						"body": "Des arbitrages pour garder un code maintenu en solo rapide et cohérent.",
+						"bullets": [
+							"Virtualisation des lignes plutôt que pagination, pour que l'exploration reste fluide et que le contexte ne se perde pas entre les pages",
+							"Un contrat de design system strict dès le départ, qui a gardé le code cohérent au fil de sa croissance",
+							"Couverture end-to-end Playwright sur les parcours qui comptent, pour livrer sereinement sans équipe QA",
+							"Backend Django volontairement mince — une API de données propre, la logique poussée là où elle coûte le moins cher à changer"
+						]
+					},
+					{
+						"title": "Impact",
+						"body": "Déployé aux côtés d'Iris, il donne aux ingénieurs les données de projet de l'entreprise au même endroit — un gain de temps et d'organisation majeur.",
+						"bullets": [
+							"Devenu le point d'entrée par défaut pour les données de projet en ingénierie",
+							"Terrain d'essai pour des patterns d'architecture et d'animation réutilisés sur d'autres travaux"
+						]
 					}
 				]
 			},
 			"sustain": {
 				"name": "SustainEcho",
-				"subtitle": "Plateforme de développement durable",
-				"role": "Full-stack",
+				"role": "Frontend & Product Designer",
+				"company": "SustainEcho (start-up rachetée par Egis Group)",
 				"period": "2021 — 2022",
 				"description": "Une plateforme pour une construction de bâtiments plus écologique. Livraison de composants et de systèmes de bout en bout, avec un fort accent sur le design centré utilisateur.",
 				"highlights": [
@@ -104,19 +165,53 @@
 				"splashSections": [
 					{
 						"title": "Contexte",
-						"body": "SustainEcho est une plateforme d'optimisation carbone pour le secteur de la construction — une startup B2B qui aide les entreprises du bâtiment à trouver des matériaux alternatifs plus éco-efficients tout en fournissant des bilans carbone."
+						"body": "SustainEcho est une plateforme d'optimisation carbone pour le secteur de la construction — un produit B2B qui aide les entreprises du bâtiment à basculer vers des matériaux moins carbonés et à obtenir des bilans carbone sur leurs chantiers. La mission : piloter et refondre entièrement l'interface, et bâtir un design system pour la porter."
+					},
+					{
+						"title": "Problème",
+						"body": "Rejoindre un projet déjà lancé, dans une startup au rythme rapide, sans expérience professionnelle préalable. L'interface avait besoin d'une refonte et d'un système pour la rendre cohérente, pendant que de grands jeux de données devaient rester consultables et triables sans frontend lourd.",
+						"bullets": [
+							"Un code et un produit déjà en cours sur lesquels monter en compétence vite",
+							"Pas de design system : l'UI dérivait au fil des fonctionnalités livrées",
+							"De grands jeux de données de matériaux et de bilans à filtrer, rechercher et trier rapidement"
+						]
 					},
 					{
 						"title": "Rôle",
-						"body": "Développeur UI/UX frontend, en dernière année à Epitech, au sein d'une équipe d'une dizaine de personnes. Pilotage et refonte complète de l'interface et création d'un design system complet. Développement de composants de zéro (tableaux, tableaux de bord). Stack : React, JavaScript, CSS, Python, Django."
+						"body": "Développeur UI/UX frontend dans une équipe d'une dizaine de personnes, pendant ma dernière année à Epitech. Pilotage de la refonte de l'interface, création du design system et développement de composants de zéro.",
+						"bullets": [
+							"Périmètre : refonte de l'interface, design system, composants clés, identité visuelle",
+							"Stack : React, JavaScript, Redux, Ant Design, Sass, Django / Python, React Testing Library, Jest, Cypress, Vite, Rollup, Docker, GitHub",
+							"Design system construit sous Figma en parallèle d'une refonte complète de l'identité visuelle"
+						]
 					},
 					{
-						"title": "Défi",
-						"body": "Premier projet d'envergure sans expérience professionnelle préalable, en rejoignant un projet déjà en cours. Montée en compétences rapide dans un environnement de startup au rythme soutenu."
+						"title": "Réalisation",
+						"body": "Reconstruction de l'interface sur une bibliothèque de composants partagée par tout le produit.",
+						"bullets": [
+							"Tableau de bord, stepper multi-étapes et tableau de données conçus de zéro",
+							"Filtrage, recherche et tri sur de grands jeux de données",
+							"Un design system Figma plus une refonte complète de l'identité visuelle",
+							"Bibliothèque de composants réutilisables alignant le produit sur un langage unique"
+						]
 					},
 					{
-						"title": "Résultats",
-						"body": "Racheté par le groupe Egis au bout d'un an — aujourd'hui commercialisé sous le nom d'Emersus."
+						"title": "Décisions",
+						"body": "Des choix pour permettre à une petite équipe d'avancer vite sans fragmenter l'UI.",
+						"bullets": [
+							"Construction sur Ant Design mais encapsulé derrière des composants projet, pour que le design system — pas le fournisseur — fixe les règles visuelles",
+							"Priorité au stepper et au tableau de données : les parcours les plus friction pour les utilisateurs qui saisissent des données de chantier",
+							"Identité visuelle figée tôt dans Figma pour que refonte et fonctionnalités ne divergent pas",
+							"Tests en couches — RTL, Jest, Cypress — pour avancer vite en petite équipe sans régressions"
+						]
+					},
+					{
+						"title": "Impact",
+						"body": "Racheté par le groupe Egis au bout d'un an, et aujourd'hui commercialisé sous le nom d'Emersus.",
+						"bullets": [
+							"Premier projet d'envergure : de zéro expérience professionnelle à la responsabilité de l'interface et du design system",
+							"Le système refondu s'est prolongé jusque dans le produit commercial"
+						]
 					}
 				]
 			}

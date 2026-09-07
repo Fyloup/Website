@@ -1,5 +1,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import "material-symbols/rounded.css";
 @import "tailwindcss";
 
 :root {
@@ -76,12 +77,24 @@ body,
 }
 
 body {
-  background: var(--dc-bg);
+  background: transparent;
   color: var(--dc-text);
   font-family: var(--dc-body);
   scrollbar-gutter: stable;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+/* Faint tiled plus-mark grid behind all content. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='148'%20height='148'%3E%3Cg%20stroke='%23c7cbce'%20stroke-width='1.2'%20stroke-linecap='round'%3E%3Cline%20x1='74'%20y1='68'%20x2='74'%20y2='80'/%3E%3Cline%20x1='68'%20y1='74'%20x2='80'%20y2='74'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: center;
+  opacity: 0.85;
 }
 
 ::selection {

@@ -37,24 +37,29 @@ export type SplashSection = {
 export type ProjectEntry = {
 	id: string;
 	name: string;
-	subtitle: string;
 	role: string;
+	company: string;
 	period: string;
 	description: string;
 	highlights: string[];
 	tags: string[];
 	logoPath: string;
+	/** Accent colour for the project's "dive" button. */
+	accent: string;
 	viewButtonText: string;
 	splashSections: SplashSection[];
 };
 
 /**
  * Structural, non-translatable data for each project. The user-facing copy
- * (name, subtitle, description, highlights, splash sections, …) lives in the
+ * (name, role, company, description, highlights, splash sections, …) lives in the
  * i18n locale files under `projects.items.<id>` and is merged in at render time
  * by the Projects section.
  */
-export type ProjectStruct = Pick<ProjectEntry, "id" | "tags" | "logoPath">;
+export type ProjectStruct = Pick<
+	ProjectEntry,
+	"id" | "tags" | "logoPath" | "accent"
+>;
 
 /**
  * Maps a project `tag` to the icon shown in place of its label. Tags with no
@@ -110,15 +115,18 @@ export const projectsStruct: ProjectStruct[] = [
 			"GitLab"
 		],
 		logoPath: IrisLogo,
+		accent: "#516ED6",
 	},
 	{
 		id: "memory",
 		tags: ["React", "TypeScript", "React Aria", "CSS", "CSS Modules", "TanStack Query", "TanStack Router", "Django", "Vitest", "Playwright", "Vite", "Docker", "Husky", "GitLab", "Cursor", "Claude"],
 		logoPath: MemoryLogo,
+		accent: "#85a42d",
 	},
 	{
 		id: "sustain",
 		tags: ["React", "JavaScript", "Ant Design", "Sass", "Redux", "Django", "React Testing Library", "Jest", "Cypress", "Vite", "Rollup", "Docker", "GitHub"],
 		logoPath: SustainLogo,
+		accent: "#12826C",
 	},
 ];

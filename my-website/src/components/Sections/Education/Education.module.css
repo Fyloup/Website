@@ -62,11 +62,19 @@
 	gap: 8px;
 }
 
+.schoolRow {
+	display: flex;
+	align-items: baseline;
+	flex-wrap: wrap;
+	gap: 4px 12px;
+}
+
 .period {
 	font-family: var(--dc-mono);
 	font-size: 12px;
 	letter-spacing: 0.06em;
 	color: var(--dc-text-5);
+	white-space: nowrap;
 }
 
 .school {
@@ -76,7 +84,7 @@
 	letter-spacing: -0.02em;
 	line-height: 1.1;
 	color: var(--dc-text);
-	margin: 4px 0 0;
+	margin: 0;
 }
 
 .diploma {
