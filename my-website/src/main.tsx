@@ -11,6 +11,7 @@ if ('scrollRestoration' in history) {
 
 const router = createRouter({
   routeTree,
+  basepath: '/Website/',
   defaultPreload: 'intent',
 })
 
