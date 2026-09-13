@@ -18,7 +18,7 @@ export function getCvAsset(language: string) {
 		: "en";
 
 	return {
-		href: `/cv-${lang}.pdf`,
+		href: `${import.meta.env.BASE_URL}cv-${lang}.pdf`,
 		filename: `CV_Philippe_SIRVENTE-MAROTO_${lang.toUpperCase()}.pdf`,
 	};
 }
