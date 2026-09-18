@@ -16,6 +16,10 @@
 		"intro": "Frontend developer with 5 years of experience, I turn complex requirements into simple, intuitive interfaces.",
 		"downloadCv": "Download CV"
 	},
+	"splashScreen": {
+		"leave": "Leave",
+		"closeAriaLabel": "Close"
+	},
 	"projects": {
 		"kicker": "Work",
 		"items": {

@@ -1,8 +1,15 @@
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 
+import englishFlag from "#/assets/skillcards/english.svg";
+import franceFlag from "#/assets/skillcards/france.svg";
 import { SUPPORTED_LANGUAGES, type SupportedLanguage } from "#/i18n";
 import styles from "./LanguageSwitcher.module.css";
+
+const flagIcons: Record<SupportedLanguage, string> = {
+	en: englishFlag,
+	fr: franceFlag,
+};
 
 export function LanguageSwitcher() {
 	const { i18n, t } = useTranslation();
@@ -21,7 +28,7 @@ export function LanguageSwitcher() {
 					})}
 					onClick={() => i18n.changeLanguage(lang)}
 				>
-					{t(`language.${lang}`)}
+					<img src={flagIcons[lang]} alt="" className={styles.flag} />
 				</button>
 			))}
 		</div>
