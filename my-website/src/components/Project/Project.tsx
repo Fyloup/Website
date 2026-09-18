@@ -1,6 +1,7 @@
 import { AnimatePresence, motion, useMotionValue } from "motion/react";
 import { useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { Button } from "#/components/Button/Button";
 import { SplashScreen } from "../SplashScreen/SplashScreen";
 import styles from "./Project.module.css";
 import { type ProjectEntry, tagIcons } from "./utils";
@@ -139,8 +140,8 @@ export function Project({ data }: ProjectProps) {
 						</AnimatePresence>,
 						document.body,
 					)}
-					<button
-						type="button"
+					<Button
+						variant="primary"
 						className={styles.meetIrisButton}
 						style={{
 							backgroundColor: accent,
@@ -157,7 +158,7 @@ export function Project({ data }: ProjectProps) {
 						>
 							arrow_forward
 						</span>
-					</button>
+					</Button>
 				</span>
 			</div>
 

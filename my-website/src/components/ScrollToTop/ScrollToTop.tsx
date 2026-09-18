@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowUp } from "lucide-react";
 
+import { Button } from "#/components/Button/Button";
 import styles from "./ScrollToTop.module.css";
 
 const SHOW_AFTER_PX = 480;
+const MotionButton = motion.create(Button);
 
 export function ScrollToTop() {
 	const [isVisible, setIsVisible] = useState(false);
@@ -26,8 +28,8 @@ export function ScrollToTop() {
 	return (
 		<AnimatePresence>
 			{isVisible && (
-				<motion.button
-					type="button"
+				<MotionButton
+					variant="icon"
 					className={styles.button}
 					onClick={handleClick}
 					aria-label="Back to top"
@@ -37,7 +39,7 @@ export function ScrollToTop() {
 					transition={{ duration: 0.2, ease: "easeOut" }}
 				>
 					<ArrowUp size={18} strokeWidth={1.75} />
-				</motion.button>
+				</MotionButton>
 			)}
 		</AnimatePresence>
 	);

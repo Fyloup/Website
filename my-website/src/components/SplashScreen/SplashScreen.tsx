@@ -2,6 +2,7 @@ import { X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
+import { Button } from "#/components/Button/Button";
 import { type SplashSection, tagIcons } from "../Project/utils";
 import styles from "./SplashScreen.module.css";
 
@@ -280,10 +281,10 @@ export function SplashScreen({
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.05 }}
                     >
-                        <button type="button" className={styles.leaveButton} onClick={onLeave} aria-label="Close">
+                        <Button variant="secondary" className={styles.leaveButton} onClick={onLeave} aria-label="Close">
                             <X size={16} strokeWidth={1.75} />
                             Leave
-                        </button>
+                        </Button>
 
                         <div className={styles.scrollArea} ref={scrollAreaRef}>
                             {sections.map((section, index) => {

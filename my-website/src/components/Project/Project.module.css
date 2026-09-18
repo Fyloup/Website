@@ -156,14 +156,6 @@
 
 .meetIrisButton {
 	position: relative;
-	display: inline-flex;
-	align-items: center;
-	gap: 6px;
-	color: #ffffff;
-	background-color: var(--dc-accent-bright);
-	padding: 8px 12px 8px 16px;
-	border-radius: 8px;
-	cursor: pointer;
 }
 
 .meetIrisButtonIcon {

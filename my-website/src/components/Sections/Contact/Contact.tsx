@@ -2,6 +2,7 @@ import { Download, Github, Linkedin, Mail } from "lucide-react";
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 
+import { Button } from "#/components/Button/Button";
 import { getCvAsset } from "#/i18n";
 import styles from "./Contact.module.css";
 
@@ -41,21 +42,22 @@ export function Contact() {
 
 				<div className={styles.actions}>
 					{links.map(({ href, labelKey, icon: Icon }) => (
-						<a
+						<Button
 							key={labelKey}
+							as="a"
+							variant="secondary"
 							href={href}
 							target={href.startsWith("http") ? "_blank" : undefined}
 							rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-							className={styles.actionButton}
 						>
 							<Icon size={16} strokeWidth={1.75} />
 							{t(labelKey)}
-						</a>
+						</Button>
 					))}
-					<a href={cv.href} download={cv.filename} className={styles.cvButton}>
+					<Button as="a" variant="primary" href={cv.href} download={cv.filename}>
 						<Download size={16} strokeWidth={1.75} />
 						{t("contact.downloadCv")}
-					</a>
+					</Button>
 				</div>
 			</motion.div>
 		</section>

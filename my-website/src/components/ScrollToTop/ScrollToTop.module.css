@@ -3,26 +3,6 @@
 	right: max(28px, calc((100vw - var(--dc-maxw)) / 2 - 30px));
 	bottom: 28px;
 	z-index: 20;
-	width: 46px;
-	height: 46px;
-	border-radius: 50%;
-	border: 1px solid var(--dc-line-strong);
-	background: var(--dc-panel);
-	color: var(--dc-text-3);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	transition:
-		color 0.2s ease,
-		border-color 0.2s ease,
-		background 0.2s ease;
-}
-
-.button:hover {
-	color: var(--dc-text);
-	border-color: var(--dc-accent-bright);
-	background: var(--dc-bg);
 }
 
 @media (max-width: 900px) {

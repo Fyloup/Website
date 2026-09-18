@@ -81,47 +81,6 @@
 	margin-top: 40px;
 }
 
-.iconLink {
-	width: 44px;
-	height: 44px;
-	border-radius: 50%;
-	border: 1px solid var(--dc-line-strong);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: var(--dc-text-3);
-	transition:
-		color 0.2s ease,
-		border-color 0.2s ease,
-		background 0.2s ease;
-}
-
-.iconLink:hover {
-	color: var(--dc-text);
-	border-color: var(--dc-accent-bright);
-	background: var(--dc-panel);
-}
-
-.cvButton {
-	display: inline-flex;
-	align-items: center;
-	gap: 8px;
-	padding: 12px 20px;
-	border-radius: 999px;
-	background: var(--dc-accent);
-	color: #ffffff;
-	font-family: var(--dc-mono);
-	font-size: 13px;
-	letter-spacing: 0.02em;
-	text-decoration: none;
-	transition: background 0.2s ease;
-}
-
-.cvButton:hover {
-	background: var(--dc-accent-bright);
-	color: #ffffff;
-}
-
 @media (max-width: 720px) {
 	.root {
 		padding: 88px 24px 64px;

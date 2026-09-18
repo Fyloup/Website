@@ -29,26 +29,6 @@
     left: min(calc(100% - 140px), calc(50% + 614px));
     right: auto;
     z-index: 1;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    border-radius: 999px;
-    background: transparent;
-    color: #1a1a1a;
-    font-family: var(--dc-mono);
-    font-size: 12px;
-    letter-spacing: 0.04em;
-    padding: 9px 16px;
-    cursor: pointer;
-    transition:
-        background 0.2s ease,
-        border-color 0.2s ease;
-}
-
-.leaveButton:hover {
-    background: rgba(0, 0, 0, 0.05);
-    border-color: rgba(0, 0, 0, 0.2);
 }
 
 /* Below this width the side gutter is too narrow for the button to clear the

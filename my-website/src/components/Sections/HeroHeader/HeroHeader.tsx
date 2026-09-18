@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 
 import avatar from "#/assets/avatar.jpg";
+import { Button } from "#/components/Button/Button";
 import { getCvAsset } from "#/i18n";
 import styles from "./HeroHeader.module.css";
 
@@ -70,21 +71,22 @@ export function HeroHeader() {
 					transition={{ duration: 0.5, ease: "easeOut" }}
 				>
 					{links.map(({ href, label, icon: Icon }) => (
-						<a
+						<Button
 							key={label}
+							as="a"
+							variant="icon"
 							href={href}
 							target={href.startsWith("http") ? "_blank" : undefined}
 							rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-							className={styles.iconLink}
 							aria-label={label}
 						>
 							<Icon size={18} strokeWidth={1.75} />
-						</a>
+						</Button>
 					))}
-					<a href={cv.href} download={cv.filename} className={styles.cvButton}>
+					<Button as="a" variant="primary" href={cv.href} download={cv.filename}>
 						<Download size={16} strokeWidth={1.75} />
 						{t("hero.downloadCv")}
-					</a>
+					</Button>
 				</motion.div>
 			</motion.div>
 		</section>
