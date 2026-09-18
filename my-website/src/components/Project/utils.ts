@@ -14,6 +14,7 @@ import ViteIcon from "#/assets/skillcards/vite.svg";
 import SassIcon from '#/assets/skillcards/sass.svg';
 import JavaScripIcon from '#/assets/skillcards/javascript.svg';
 import DjangoIcon from '#/assets/skillcards/django.svg';
+import PythonIcon from '#/assets/skillcards/python.svg';
 import RTLIcon from '#/assets/skillcards/testing-library.svg';
 import DockerIcon from '#/assets/skillcards/docker.svg';
 import GitHubIcon from '#/assets/skillcards/github.svg';
@@ -83,6 +84,7 @@ export const tagIcons: Record<string, string> = {
 	Sass: SassIcon,
 	JavaScript: JavaScripIcon,
 	Django: DjangoIcon,
+	Python: PythonIcon,
 	"React Testing Library": RTLIcon,
 	Jest: JestIcon,
 	Cypress: CypressIcon,
@@ -112,7 +114,11 @@ export const projectsStruct: ProjectStruct[] = [
 			"Vitest",
 			"Vite",
 			"Docker",
-			"GitLab"
+			"GitLab",
+			"Python",
+			"Django",
+			"Cursor",
+			"Claude"
 		],
 		logoPath: IrisLogo,
 		accent: "#516ED6",
