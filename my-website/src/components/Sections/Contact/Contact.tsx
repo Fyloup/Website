@@ -1,7 +1,9 @@
-import { Download, Github, Linkedin, Mail } from "lucide-react";
+import { Download, Mail } from "lucide-react";
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 
+import GithubIcon from "#/assets/skillcards/github.svg";
+import LinkedinIcon from "#/assets/skillcards/linkedin.svg";
 import { Button } from "#/components/Button/Button";
 import { getCvAsset } from "#/i18n";
 import styles from "./Contact.module.css";
@@ -12,14 +14,14 @@ const links = [
 	{
 		href: "https://www.linkedin.com/in/philippe-smc/",
 		labelKey: "contact.linkedin",
-		icon: Linkedin,
+		icon: <img src={LinkedinIcon} alt="" width={16} height={16} />,
 	},
 	{
 		href: "https://github.com/Fyloup",
 		labelKey: "contact.github",
-		icon: Github,
+		icon: <img src={GithubIcon} alt="" width={16} height={16} />,
 	},
-	{ href: `mailto:${EMAIL}`, labelKey: "contact.email", icon: Mail },
+	{ href: `mailto:${EMAIL}`, labelKey: "contact.email", icon: <Mail size={16} strokeWidth={1.75} /> },
 ];
 
 export function Contact() {
@@ -41,7 +43,7 @@ export function Contact() {
 				</a>
 
 				<div className={styles.actions}>
-					{links.map(({ href, labelKey, icon: Icon }) => (
+					{links.map(({ href, labelKey, icon }) => (
 						<Button
 							key={labelKey}
 							as="a"
@@ -50,7 +52,7 @@ export function Contact() {
 							target={href.startsWith("http") ? "_blank" : undefined}
 							rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
 						>
-							<Icon size={16} strokeWidth={1.75} />
+							{icon}
 							{t(labelKey)}
 						</Button>
 					))}

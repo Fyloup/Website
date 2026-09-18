@@ -1,8 +1,10 @@
-import { Download, Github, Linkedin, Mail } from "lucide-react";
+import { Download, Mail } from "lucide-react";
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 
 import avatar from "#/assets/avatar.jpg";
+import GithubIcon from "#/assets/skillcards/github.svg";
+import LinkedinIcon from "#/assets/skillcards/linkedin.svg";
 import { Button } from "#/components/Button/Button";
 import { getCvAsset } from "#/i18n";
 import styles from "./HeroHeader.module.css";
@@ -18,10 +20,14 @@ const links = [
 	{
 		href: "https://www.linkedin.com/in/philippe-smc/",
 		label: "LinkedIn",
-		icon: Linkedin,
+		icon: <img src={LinkedinIcon} alt="" width={18} height={18} />,
 	},
-	{ href: "https://github.com/Fyloup", label: "GitHub", icon: Github },
-	{ href: `mailto:${EMAIL}`, label: "Email", icon: Mail },
+	{
+		href: "https://github.com/Fyloup",
+		label: "GitHub",
+		icon: <img src={GithubIcon} alt="" width={18} height={18} />,
+	},
+	{ href: `mailto:${EMAIL}`, label: "Email", icon: <Mail size={18} strokeWidth={1.75} /> },
 ];
 
 export function HeroHeader() {
@@ -70,7 +76,7 @@ export function HeroHeader() {
 					variants={rise}
 					transition={{ duration: 0.5, ease: "easeOut" }}
 				>
-					{links.map(({ href, label, icon: Icon }) => (
+					{links.map(({ href, label, icon }) => (
 						<Button
 							key={label}
 							as="a"
@@ -80,7 +86,7 @@ export function HeroHeader() {
 							rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
 							aria-label={label}
 						>
-							<Icon size={18} strokeWidth={1.75} />
+							{icon}
 						</Button>
 					))}
 					<Button as="a" variant="primary" href={cv.href} download={cv.filename}>
