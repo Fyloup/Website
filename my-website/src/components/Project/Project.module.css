@@ -138,8 +138,24 @@
 	}
 
 	.row {
-		grid-template-columns: 40px 1fr auto;
+		grid-template-columns: 40px 1fr;
+		grid-template-areas:
+			"logo main"
+			"meta meta";
 		gap: 14px;
+	}
+
+	.number {
+		grid-area: logo;
+	}
+
+	.rowMain {
+		grid-area: main;
+	}
+
+	.rowMeta {
+		grid-area: meta;
+		justify-content: flex-start;
 	}
 
 	.rowMeta .role {

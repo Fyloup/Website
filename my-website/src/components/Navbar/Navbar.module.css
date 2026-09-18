@@ -13,6 +13,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	gap: 12px;
 }
 
 .brand {
@@ -34,6 +35,7 @@
 	display: flex;
 	gap: 26px;
 	align-items: center;
+	min-width: 0;
 }
 
 .link {
@@ -43,6 +45,8 @@
 	text-transform: uppercase;
 	color: var(--dc-text-4);
 	text-decoration: none;
+	white-space: nowrap;
+	flex-shrink: 0;
 	transition: color 0.2s ease;
 }
 
@@ -55,7 +59,24 @@
 		display: none;
 	}
 
+	.inner {
+		padding: 15px 20px;
+	}
+
 	.nav {
-		gap: 18px;
+		gap: 14px;
+		/* Scroll instead of silently clipping (the page sets overflow-x:
+		   hidden) when narrower devices can't fit every link plus the
+		   language switcher. */
+		overflow-x: auto;
+		scrollbar-width: none;
+	}
+
+	.nav::-webkit-scrollbar {
+		display: none;
+	}
+
+	.link {
+		font-size: 11px;
 	}
 }
