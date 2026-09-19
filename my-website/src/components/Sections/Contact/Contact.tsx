@@ -1,4 +1,4 @@
-import { Download, Mail } from "lucide-react";
+import { Download } from "lucide-react";
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 
@@ -21,7 +21,15 @@ const links = [
 		labelKey: "contact.github",
 		icon: <img src={GithubIcon} alt="" width={16} height={16} />,
 	},
-	{ href: `mailto:${EMAIL}`, labelKey: "contact.email", icon: <Mail size={16} strokeWidth={1.75} /> },
+	{
+		href: `mailto:${EMAIL}`,
+		labelKey: "contact.email",
+		icon: (
+			<span className="material-symbols-rounded" aria-hidden="true" style={{ fontSize: 16 }}>
+				alternate_email
+			</span>
+		),
+	},
 ];
 
 export function Contact() {

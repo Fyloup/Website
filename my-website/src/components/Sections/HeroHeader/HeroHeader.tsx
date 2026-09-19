@@ -1,4 +1,4 @@
-import { Download, Mail } from "lucide-react";
+import { Download } from "lucide-react";
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 
@@ -27,7 +27,15 @@ const links = [
 		label: "GitHub",
 		icon: <img src={GithubIcon} alt="" width={18} height={18} />,
 	},
-	{ href: `mailto:${EMAIL}`, label: "Email", icon: <Mail size={18} strokeWidth={1.75} /> },
+	{
+		href: `mailto:${EMAIL}`,
+		label: "Email",
+		icon: (
+			<span className="material-symbols-rounded" aria-hidden="true" style={{ fontSize: 18 }}>
+				alternate_email
+			</span>
+		),
+	},
 ];
 
 export function HeroHeader() {
