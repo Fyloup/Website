@@ -66,6 +66,7 @@
 
 html {
   background: var(--dc-bg);
+  scrollbar-gutter: stable;
 }
 
 html,
@@ -80,7 +81,6 @@ body {
   background: transparent;
   color: var(--dc-text);
   font-family: var(--dc-body);
-  scrollbar-gutter: stable;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
