@@ -26,6 +26,7 @@ export function Projects() {
 						role: t(`${base}.role`),
 						company: t(`${base}.company`),
 						period: t(`${base}.period`),
+						description: t(`${base}.description`),
 						highlights: t(`${base}.highlights`, {
 							returnObjects: true,
 						}) as unknown as string[],

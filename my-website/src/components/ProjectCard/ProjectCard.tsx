@@ -7,6 +7,7 @@ export type Project = {
     tagline: string
     context: string
     period: string
+    description: string
     tags: string[]
     /** Optional accent color override for the card (defaults to the theme accent). */
     accent?: string
@@ -44,6 +45,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
                 <h3 className={styles.name}>{project.name}</h3>
                 <p className={styles.tagline}>{project.tagline}</p>
+                <p className={styles.description}>{project.description}</p>
 
                 <ul className={styles.tags}>
                     {project.tags.map((tag) => (
