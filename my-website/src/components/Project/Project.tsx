@@ -169,7 +169,12 @@ export function Project({ data }: ProjectProps) {
 					<ul className={styles.highlights}>
 						{highlights.map((highlight) => (
 							<li key={highlight} className={styles.highlight}>
-								<span className={styles.dash}>—</span>
+								<span
+									className={styles.dash}
+									style={{ color: accent }}
+								>
+									—
+								</span>
 								{highlight}
 							</li>
 						))}
