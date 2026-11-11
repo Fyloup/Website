@@ -27,7 +27,6 @@ export function Project({ data }: ProjectProps) {
 		name,
 		role,
 		company,
-		description,
 		highlights,
 		tags,
 		logoPath,
@@ -165,7 +164,6 @@ export function Project({ data }: ProjectProps) {
 			{/* Overview content */}
 			<div className={styles.panel}>
 				<div className={styles.panelContent}>
-					<p className={styles.description}>{description}</p>
 					<ul className={styles.highlights}>
 						{highlights.map((highlight) => (
 							<li key={highlight} className={styles.highlight}>

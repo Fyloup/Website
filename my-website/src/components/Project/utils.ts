@@ -41,7 +41,6 @@ export type ProjectEntry = {
 	role: string;
 	company: string;
 	period: string;
-	description: string;
 	highlights: string[];
 	tags: string[];
 	logoPath: string;
@@ -53,7 +52,7 @@ export type ProjectEntry = {
 
 /**
  * Structural, non-translatable data for each project. The user-facing copy
- * (name, role, company, description, highlights, splash sections, …) lives in the
+ * (name, role, company, highlights, splash sections, …) lives in the
  * i18n locale files under `projects.items.<id>` and is merged in at render time
  * by the Projects section.
  */
