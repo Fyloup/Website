@@ -50,12 +50,7 @@ export type Skill = {
 	icon?: string;
 	/** Fallback glyph shown when there's no `icon` (takes priority over initials). */
 	emoji?: string;
-	description?: string;
 };
-
-/** Shown until each skill gets a real blurb; clamped to 3 lines in the card. */
-export const SKILL_DESCRIPTION_PLACEHOLDER =
-	"Short description coming soon — a couple of sentences on how this skill is used day to day and what it's paired with.";
 
 export type SkillCategory = {
 	title: string;

@@ -1,6 +1,6 @@
 .card {
 	display: flex;
-	align-items: flex-start;
+	align-items: center;
 	gap: 14px;
 	padding: 16px 18px;
 	border-radius: 14px;
@@ -58,17 +58,4 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-}
-
-.description {
-	min-width: 0;
-	font-family: var(--dc-body);
-	font-size: 13.5px;
-	line-height: 1.5;
-	color: var(--dc-text-4);
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 3;
-	line-clamp: 3;
-	overflow: hidden;
 }

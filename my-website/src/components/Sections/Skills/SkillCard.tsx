@@ -1,5 +1,5 @@
 import styles from "./SkillCard.module.css";
-import { SKILL_DESCRIPTION_PLACEHOLDER, type Skill } from "./utils";
+import type { Skill } from "./utils";
 
 function getInitials(name: string): string {
 	const words = name.split(" ").filter(Boolean);
@@ -9,7 +9,7 @@ function getInitials(name: string): string {
 	return name.slice(0, 2).toUpperCase();
 }
 
-export function SkillCard({ name, icon, emoji, description }: Skill) {
+export function SkillCard({ name, icon, emoji }: Skill) {
 	return (
 		<div className={styles.card}>
 			<span className={styles.logo}>
@@ -25,9 +25,6 @@ export function SkillCard({ name, icon, emoji, description }: Skill) {
 			</span>
 			<span className={styles.body}>
 				<span className={styles.name}>{name}</span>
-				<span className={styles.description}>
-					{description ?? SKILL_DESCRIPTION_PLACEHOLDER}
-				</span>
 			</span>
 		</div>
 	);
